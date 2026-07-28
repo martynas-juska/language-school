@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Background image */}
       <div className="absolute inset-0 -z-10">
         <Image
-          src="/images/hero-image.png"
+          src="/images/language-hero.jpg"
           alt=""
           fill
           priority
