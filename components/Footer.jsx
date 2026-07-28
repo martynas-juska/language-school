@@ -4,11 +4,11 @@ import Container from "@/components/Container";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-white/10 bg-[#050816]">
+    <footer className="mt-20 border-t border-white/10 bg-[var(--bg)]">
       <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:justify-between">
         <div>
           <p className="text-lg font-semibold text-white">Kalbų Mokykla</p>
-          <p className="mt-1 text-sm text-[#94A3C2]">
+          <p className="mt-1 text-sm text-[var(--text-secondary)]">
             Kalbų kursai ir paslaugos
           </p>
         </div>
@@ -18,7 +18,7 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-[#94A3C2] transition-colors hover:text-white"
+              className="text-sm text-[var(--text-secondary)] transition-colors hover:text-white"
             >
               {link.label}
             </Link>

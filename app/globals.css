@@ -1,24 +1,38 @@
-:root {
-  --bg: #050816;
-  --section: #0A1020;
-  --card: #10192B;
-  --accent: #7A3CFF;
-  --accent-hover: #8F53FF;
-  --text-body: #C8D2E8;
-  --text-secondary: #94A3C2;
-}
-
-body {
-  background-color: var(--bg);
-  color: var(--text-body);
-}@import "tailwindcss";
+@import "tailwindcss";
 
 :root {
+  /* Background */
   --bg: #050816;
-  --section: #0A1020;
-  --card: #10192B;
-  --accent: #7A3CFF;
-  --accent-hover: #8F53FF;
+  --bg-top: #07101C;
+  --bg-bottom: #0B1830;
+
+  /* Cards */
+  --card: #111B2A;
+  --card-border: rgba(78, 159, 166, 0.12);
+
+  /* Brand — teal (from logo) */
+  --accent: #4E9FA6;
+  --accent-hover: #3F8F96;
+  --accent-active: #357E85;
+
+  /* Gradients */
+  --gradient: linear-gradient(90deg, #4E9FA6 0%, #5AAEB5 45%, #7CCFD6 100%);
+  --gradient-rich: linear-gradient(180deg, #458C94 0%, #5DAEB4 50%, #89D8DE 100%);
+  --gradient-text: linear-gradient(90deg, #4E9FA6, #5DB5BB, #89D8DE);
+  --gradient-logo: linear-gradient(180deg, #3F8F96 0%, #5DB5BB 50%, #8EDDE2 100%);
+
+  /* Icons */
+  --icon: #4E9FA6;
+  --icon-hover: #89D8DE;
+
+  /* Hero glow */
+  --hero-glow: rgba(78, 159, 166, 0.18);
+
+  /* Status */
+  --success: #2FBF8C;
+  --error: #E85B6A;
+
+  /* Text */
   --text-body: #C8D2E8;
   --text-secondary: #94A3C2;
 }
