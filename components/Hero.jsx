@@ -15,8 +15,8 @@ export default function Hero() {
           className="object-cover"
         />
         {/* Gradient overlay: dark base + brand tint */}
-        <div className="absolute inset-0 bg-[#050816]/70" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#7A3CFF]/25 via-transparent to-[#4AB8FF]/15" />
+        {/* <div className="absolute inset-0 bg-[#050816]/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#7A3CFF]/25 via-transparent to-[#4AB8FF]/15" /> */}
       </div>
 
       <Container className="flex min-h-screen flex-col justify-center py-24">
