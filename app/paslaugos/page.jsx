@@ -1,3 +1,19 @@
+import DocumentsSection from "@/components/DocumentsSection";
+import PaslaugosHero from "@/components/PaslaugosHero";
+import ServicesGrid from "@/components/ServicesGrid";
+import TeacherProgramSection from "@/components/TeacherProgramSection";
+import TranslationsSection from "@/components/TranslationsSection";
+import TutoringSection from "@/components/TutoringSection";
+
 export default function Paslaugos() {
-  return <main className="min-h-screen px-6 py-24"><h1 className="text-4xl font-extrabold text-white">Paslaugos</h1></main>;
+  return (
+    <>
+      <PaslaugosHero />
+      <ServicesGrid />
+      <DocumentsSection />
+      <TranslationsSection />
+      <TutoringSection />
+      <TeacherProgramSection />
+    </>
+  );
 }
