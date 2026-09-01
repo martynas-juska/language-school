@@ -34,7 +34,7 @@ export default function ContactForm() {
       <div className="mx-auto max-w-3xl">
         <div className="rounded-[32px] border border-[var(--card-border)] bg-[var(--card)] p-8 shadow-[0_25px_80px_rgba(0,0,0,0.4)] sm:p-10 lg:p-14">
           {/* Heading */}
-          <div git add .>
+          <div>
             {/* <span className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
               Susisiekime
             </span> */}
