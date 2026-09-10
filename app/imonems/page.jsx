@@ -1,6 +1,9 @@
 import ImonemsFeatures from "@/components/ImonemsFeatures";
 import ImonemsHero from "@/components/ImonemsHero";
+import ImonemsProcessSection from "@/components/ImonemsProcessSection";
 import ImonemsSolutionSection from "@/components/ImonemsSolutionSection";
+import ImonemsTeachersCarousel from "@/components/ImonemsTeachersCarousel";
+import ImonemsTeachersSection from "@/components/ImonemsTeachersSection";
 
 export default function Imonems() {
   return (
@@ -8,6 +11,9 @@ export default function Imonems() {
       <ImonemsHero />
       <ImonemsFeatures />
       <ImonemsSolutionSection  />
+      <ImonemsProcessSection />
+      <ImonemsTeachersSection />
+      <ImonemsTeachersCarousel />
     </>
   );
 }

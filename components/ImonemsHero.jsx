@@ -3,7 +3,7 @@ import Container from "@/components/Container";
 
 export default function ImonemsHero() {
   return (
-    <section className="relative overflow-hidden bg-[var(--bg)] pt-40 pb-28">
+    <section className="relative overflow-hidden bg-[var(--bg-top)] pt-40 pb-28">
       {/* Decorative glow */}
       <div
         aria-hidden="true"

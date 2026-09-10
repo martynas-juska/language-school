@@ -93,7 +93,7 @@ function Feature({ feature }) {
 
 export default function ImonemsFeatures() {
   return (
-    <section className="bg-[var(--bg)] py-28">
+    <section className="bg-[var(--bg-top)] py-28">
       <Container>
         {/* Section heading */}
         <div className="max-w-3xl">
