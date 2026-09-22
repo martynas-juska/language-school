@@ -1,4 +1,5 @@
 import ImonemsFeatures from "@/components/ImonemsFeatures";
+import ImonemsFinalCTA from "@/components/ImonemsFinalCTA";
 import ImonemsHero from "@/components/ImonemsHero";
 import ImonemsProcessSection from "@/components/ImonemsProcessSection";
 import ImonemsSolutionSection from "@/components/ImonemsSolutionSection";
@@ -14,6 +15,7 @@ export default function Imonems() {
       <ImonemsProcessSection />
       <ImonemsTeachersSection />
       <ImonemsTeachersCarousel />
+      <ImonemsFinalCTA />
     </>
   );
 }
