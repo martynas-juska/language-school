@@ -19,3 +19,7 @@ export default function Imonems() {
     </>
   );
 }
+
+
+//padidinti shrifta
+//Lertman/contactai , parasykite mums, Apie Lertman(truputi)

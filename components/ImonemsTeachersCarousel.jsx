@@ -4,26 +4,30 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Container from "@/components/Container";
 
+import teacher1 from "@/app/images/teachers/teacher-1.png";
+import teacher2 from "@/app/images/teachers/teacher-2.png";
+import teacher3 from "@/app/images/teachers/teacher-croped-3.jpg";
+
 const teachers = [
   {
     name: "Vaida Koricke",
     language: "Norvegų kalba",
-    image: "/images/teachers/vaida.jpg",
+    image: teacher1,
   },
   {
     name: "Dėstytojas",
     language: "Švedų kalba",
-    image: "/images/teachers/teacher-2.jpg",
+    image: teacher2,
   },
   {
     name: "Dėstytojas",
     language: "Norvegų kalba",
-    image: "/images/teachers/teacher-3.jpg",
+    image: teacher3,
   },
   {
     name: "Dėstytoja",
     language: "Anglų kalba",
-    image: "/images/teachers/teacher-4.jpg",
+    image: teacher1,
   },
 ];
 

@@ -1,21 +1,25 @@
 import Image from "next/image";
 import Container from "@/components/Container";
 
+import teacher1 from "@/app/images/teachers/teacher-1.png";
+import teacher2 from "@/app/images/teachers/teacher-2.png";
+import teacher3 from "@/app/images/teachers/teacher-croped-3.jpg";
+
 const teachers = [
   {
     name: "Vaida Koricke",
     language: "Norvegų kalba",
-    image: "/images/teachers/vaida.jpg",
+    image:teacher1,
   },
   {
     name: "Vardas Pavardė",
     language: "Švedų kalba",
-    image: "/images/teachers/teacher-2.jpg",
+    image: teacher2,
   },
   {
     name: "Vardas Pavardė",
     language: "Anglų kalba",
-    image: "/images/teachers/teacher-3.jpg",
+    image: teacher3,
   },
 ];
 
