@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
 
 const stats = [
   { value: 13, superscript: "Metų", label: "Mokyklos Patirtis" },
@@ -56,16 +57,13 @@ export default function StatsSection() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
-          Patirtis kuria galite pasitikėti
-        </h2>
-        <p className="mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
-          Mūsų patirtis – Jūsų sėkmė! Nekantraujame su Jumis pasidalinti žiniomis
-          ir įžvalgomis, kurias sukaupė mūsų mokytojai keliaudami po platųjį
-          pasaulį.
-        </p>
+        <SectionHeading
+          eyebrow="Patirtis"
+          title="Patirtis, kuria galite pasitikėti"
+          description="Mūsų patirtis – Jūsų sėkmė! Nekantraujame su Jumis pasidalinti žiniomis ir įžvalgomis, kurias sukaupė mūsų mokytojai keliaudami po platųjį pasaulį."
+        />
 
-        <div className="mt-16 grid gap-6 glow-card rounded-2xl p-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-12 grid gap-6 glow-card rounded-2xl p-10 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <div
               key={i}

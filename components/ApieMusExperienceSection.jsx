@@ -15,16 +15,16 @@ export default function ApieMusExperienceSection() {
       <Container>
         {/* TOP LABEL */}
         <div className="flex items-center gap-5">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+          <span className="eyebrow">
             Patirtis
           </span>
 
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-border" />
         </div>
 
         {/* HEADING */}
         <div className="mt-8 grid gap-7 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-20">
-          <h2 className="max-w-3xl text-4xl font-extrabold leading-[1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h2 className="max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Patirtis, kuria
             <br />
             galite{" "}
@@ -38,18 +38,18 @@ export default function ApieMusExperienceSection() {
         </div>
 
         {/* STATISTICS */}
-        <div className="mt-12 border-y border-white/10 lg:mt-14">
+        <div className="mt-12 border-y border-border lg:mt-14">
           <div className="grid lg:grid-cols-[1.2fr_0.8fr]">
             {/* MAIN NUMBER */}
-            <div className="relative py-12 lg:border-r lg:border-white/10 lg:py-14 lg:pr-14">
-              <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)]">
+            <div className="relative py-12 lg:border-r lg:border-border lg:py-14 lg:pr-14">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)]">
                 Studentų, kuriems padėjome
               </span>
 
               <div className="mt-6 flex items-end gap-1">
                 <AnimatedNumber
                   value={2335}
-                  className="text-[clamp(5.5rem,11vw,9.5rem)] font-extrabold leading-[0.75] tracking-[-0.07em] text-white"
+                  className="text-[clamp(5.5rem,11vw,9.5rem)] font-extrabold leading-[0.75] tracking-[-0.07em] text-foreground"
                 />
 
                 <span className="mb-[-0.02em] text-[4.5rem] font-light leading-none tracking-[-0.08em] text-[var(--accent)] sm:text-[6rem] lg:text-[7rem]">
@@ -60,7 +60,7 @@ export default function ApieMusExperienceSection() {
               <div className="mt-8 flex items-center gap-4">
                 <span className="h-px w-10 bg-[var(--accent)]" />
 
-                <span className="text-sm font-medium text-white/70">
+                <span className="text-sm font-medium text-foreground/70">
                   Lietuvoje ir užsienyje
                 </span>
               </div>
@@ -91,9 +91,9 @@ export default function ApieMusExperienceSection() {
             mokymasis turi veikti realiame žmogaus gyvenime.
           </p>
 
-          <span className="hidden h-px flex-1 bg-white/[0.06] sm:mx-8 sm:block" />
+          <span className="hidden h-px flex-1 bg-border/60 sm:mx-8 sm:block" />
 
-          <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/30">
+          <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground">
             Lertman
           </span>
         </div>
@@ -111,17 +111,17 @@ function StatRow({ number, label, description, bordered = false }) {
         lg:min-h-0 lg:flex-row lg:items-center lg:justify-between lg:px-10 lg:py-9
         ${
           bordered
-            ? "border-b border-white/10 sm:border-b-0 sm:border-r lg:border-r-0 lg:border-b"
+            ? "border-b border-border sm:border-b-0 sm:border-r lg:border-r-0 lg:border-b"
             : ""
         }
       `}
     >
       <div>
-        <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--text-secondary)]">
+        <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-secondary)]">
           {description}
         </span>
 
-        <p className="mt-1 text-lg font-semibold text-white">{label}</p>
+        <p className="mt-1 text-lg font-semibold text-foreground">{label}</p>
       </div>
 
       <AnimatedNumber

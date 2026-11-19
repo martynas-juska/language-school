@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
 
 const tabs = [
   {
@@ -60,8 +61,15 @@ export default function LanguageTabs() {
   }, []);
 
   return (
-    <section className="bg-[var(--bg-bottom)] py-24">
-      <Container className="flex flex-col gap-12 lg:flex-row lg:gap-16">
+    <section className="bg-[var(--bg)] py-24">
+      <Container>
+        <SectionHeading
+          eyebrow="Kalbos"
+          title="12 kalbų – nuo anglų iki japonų"
+          description="Programą sudarome pagal Jūsų tikslus: karjerai, išvykimui į užsienį ar tiesiog savo malonumui."
+        />
+      </Container>
+      <Container className="mt-12 flex flex-col gap-12 lg:flex-row lg:gap-16">
         {/* Left: sticky nav with scroll indicator */}
         <nav className="lg:w-1/4 lg:min-w-[240px]">
           <div className="lg:sticky lg:top-24">
@@ -79,7 +87,7 @@ export default function LanguageTabs() {
                   onClick={() =>
                     sectionRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" })
                   }
-                  className={`text-left text-xl font-bold transition-opacity duration-200 ${
+                  className={`text-left text-lg font-medium transition-opacity duration-200 ${
                     i === active ? "text-foreground opacity-100" : "text-foreground opacity-60 hover:opacity-90"
                   }`}
                 >
@@ -91,7 +99,7 @@ export default function LanguageTabs() {
         </nav>
 
         {/* Right: stacked sections */}
-        <div className="flex-1 space-y-32">
+        <div className="flex-1 space-y-20">
           {tabs.map((tab, i) => (
             <div
               key={tab.id}
@@ -109,7 +117,7 @@ export default function LanguageTabs() {
 
               {/* Languages — cards, 2 per row */}
               {tab.languages && (
-                <div className="grid gap-6 sm:grid-cols-2">
+                <div className="grid gap-4 sm:grid-cols-2">
                   {tab.languages.map((lang) => (
                     <div
                       key={lang.name}
@@ -125,7 +133,7 @@ export default function LanguageTabs() {
               )}
 
               {/* 3:2 image below */}
-              <div className="relative aspect-[3/2] w-full overflow-hidden rounded-xl">
+              <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border">
                 <Image src={tab.image} alt="" fill className="object-cover" />
               </div>
             </div>

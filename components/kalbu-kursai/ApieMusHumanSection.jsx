@@ -1,27 +1,6 @@
 import Image from "next/image";
 import Container from "@/components/Container";
-
-import teacher1 from "@/app/images/teachers/teacher-1.png";
-import teacher2 from "@/app/images/teachers/teacher-2.png";
-import teacher3 from "@/app/images/teachers/teacher-croped-3.jpg";
-
-const teachers = [
-  {
-    name: "Vaida Koricke",
-    language: "Norvegų kalba",
-    image:teacher1,
-  },
-  {
-    name: "Vardas Pavardė",
-    language: "Švedų kalba",
-    image: teacher2,
-  },
-  {
-    name: "Vardas Pavardė",
-    language: "Anglų kalba",
-    image: teacher3,
-  },
-];
+import { teachers } from "@/lib/teachers";
 
 export default function ApieMusTeachersSection() {
   return (
@@ -36,11 +15,11 @@ export default function ApieMusTeachersSection() {
         {/* HEADER */}
         <div className="grid gap-8 lg:grid-cols-[1fr_0.7fr] lg:items-end lg:gap-20">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+            <span className="eyebrow">
               Mūsų komanda
             </span>
 
-            <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Žmonės, kurie
               <br />
               kalbą{" "}
@@ -76,10 +55,10 @@ function TeacherCard({ teacher, index }) {
       {/* subtle shadow/glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -inset-3 rounded-[2rem] bg-[var(--accent)]/[0.04] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
+        className="pointer-events-none absolute -inset-3 rounded-[1.5rem] bg-[var(--accent)]/[0.06] opacity-0 blur-2xl transition-opacity duration-500 group-hover:opacity-100"
       />
 
-      <div className="relative aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[#091421]">
+      <div className="glow-card relative aspect-[4/5] overflow-hidden rounded-2xl">
         {/* PHOTO */}
         <Image
           src={teacher.image}
@@ -90,21 +69,21 @@ function TeacherCard({ teacher, index }) {
         />
 
         {/* Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#06101d] via-[#07101C]/15 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/15 to-transparent" />
 
         {/* Slight accent overlay on hover */}
         <div className="absolute inset-0 bg-[var(--accent)]/[0.04] opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
         {/* NUMBER */}
         <div className="absolute left-6 top-6">
-          <span className="text-[10px] font-semibold tracking-[0.2em] text-white/50">
+          <span className="text-xs font-semibold tracking-[0.2em] text-muted-foreground">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
         {/* FUTURE PROFILE INDICATOR */}
         <div className="absolute right-6 top-6">
-          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-[#07101C]/20 text-white/70 backdrop-blur-md transition-all duration-300 group-hover:border-[var(--accent)]/50 group-hover:bg-[var(--accent)] group-hover:text-[#07101C]">
+          <span className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 bg-black/20 text-foreground/80 backdrop-blur-md transition-all duration-300 group-hover:border-[var(--accent)]/50 group-hover:bg-[var(--accent)] group-hover:text-primary-foreground">
             <svg
               width="16"
               height="16"
@@ -127,20 +106,20 @@ function TeacherCard({ teacher, index }) {
         {/* INFORMATION */}
         <div className="absolute inset-x-0 bottom-0 p-6 sm:p-7">
           <div className="border-t border-white/20 pt-5">
-            <span className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            <span className="eyebrow">
               {teacher.language}
             </span>
 
-            <h3 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-[1.7rem]">
+            <h3 className="mt-2 text-2xl font-medium tracking-tight text-foreground sm:text-[1.7rem]">
               {teacher.name}
             </h3>
 
             <div className="mt-5 flex items-center justify-between">
-              <span className="text-xs text-white/45">
+              <span className="text-xs text-muted-foreground">
                 Lertman dėstytojas
               </span>
 
-              <span className="translate-y-1 text-xs font-medium text-white/0 transition-all duration-300 group-hover:translate-y-0 group-hover:text-white/65">
+              <span className="translate-y-1 text-xs font-medium text-transparent transition-all duration-300 group-hover:translate-y-0 group-hover:text-foreground/80">
                 Susipažinti
               </span>
             </div>

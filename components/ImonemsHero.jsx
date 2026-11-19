@@ -14,11 +14,11 @@ export default function ImonemsHero() {
         <div className="grid items-center gap-16 lg:grid-cols-[1fr_1fr] lg:gap-24">
           {/* Left */}
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            <span className="eyebrow">
               Verslui ir organizacijoms
             </span>
 
-            <h1 className="mt-6 max-w-2xl text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h1 className="mt-6 max-w-2xl text-5xl font-semibold leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl" style={{ fontStretch: "118%" }}>
               Kursai skirti
               <br />
               <span className="text-[var(--accent)]">Įmonėms</span>
@@ -45,14 +45,14 @@ export default function ImonemsHero() {
 
             <Link
               href="#contact"
-              className="group mt-10 inline-flex items-center gap-4 text-base font-semibold text-white"
+              className="group mt-10 inline-flex items-center gap-4 text-base font-semibold text-foreground"
             >
               <span className="relative">
                 Susisiekti
                 <span className="absolute -bottom-2 left-0 h-px w-full origin-left bg-[var(--accent)] transition-transform duration-300 group-hover:scale-x-0" />
               </span>
 
-              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)]/50 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[var(--accent)]">
+              <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--accent)]/50 transition-all duration-300 group-hover:translate-x-1 group-hover:bg-[var(--accent)] group-hover:text-primary-foreground">
                 <svg
                   width="16"
                   height="16"
@@ -75,13 +75,13 @@ export default function ImonemsHero() {
 
         {/* Bottom visual divider */}
         <div className="mt-24 flex items-center gap-5">
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-border" />
 
           <span className="text-xs font-medium uppercase tracking-[0.2em] text-[var(--text-secondary)]">
             Kalbų mokymai verslui
           </span>
 
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-border" />
         </div>
       </Container>
     </section>

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
 
 const types = [
   {
@@ -54,15 +56,13 @@ export default function CourseTypes() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-center text-4xl font-extrabold text-white sm:text-5xl">
-          Mokykitės kalbų savu ritmu!
-        </h2>
+        <SectionHeading eyebrow="Formatai" title="Mokykitės kalbų savu ritmu!" center />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <Reveal variant="stagger" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {types.map((t) => (
             <div
               key={t.title}
-              className="group relative aspect-[3/4] overflow-hidden rounded-3xl"
+              className="glow-card group relative aspect-[3/4] overflow-hidden"
             >
               {/* Image */}
               <Image
@@ -71,12 +71,12 @@ export default function CourseTypes() {
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
-              {/* Scrim — darkens more on hover */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent transition-colors duration-300 group-hover:from-black/90" />
+              {/* Fade into the page colour so the text stays readable */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
 
               {/* Bottom-left info */}
               <div className="absolute bottom-0 left-0 p-6">
-                <span className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent)]/15 backdrop-blur-sm">
+                <span className="icon-tile mb-3 size-11 backdrop-blur-sm">
                   <svg
                     width="24"
                     height="24"
@@ -90,7 +90,7 @@ export default function CourseTypes() {
                     {t.icon}
                   </svg>
                 </span>
-                <h3 className="text-lg font-bold text-white">{t.title}</h3>
+                <h3 className="text-lg font-medium text-foreground">{t.title}</h3>
 
                 {/* Reveal on hover */}
                 <p className="mt-2 max-h-0 overflow-hidden text-sm leading-relaxed text-[var(--text-body)] opacity-0 transition-all duration-500 group-hover:max-h-40 group-hover:opacity-100">
@@ -99,7 +99,7 @@ export default function CourseTypes() {
               </div>
             </div>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

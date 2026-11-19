@@ -5,7 +5,7 @@ export default function ImonemsFinalCTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-white/10 bg-[var(--bg-top)] py-28 lg:py-36"
+      className="relative overflow-hidden border-t border-border bg-[var(--bg-top)] py-28 lg:py-36"
     >
       {/* Background atmosphere */}
       <div
@@ -21,17 +21,17 @@ export default function ImonemsFinalCTA() {
       <Container>
         {/* Top label */}
         <div className="mb-16 flex items-center gap-5">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+          <span className="eyebrow">
             Kitas žingsnis
           </span>
 
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-border" />
         </div>
 
         <div className="grid gap-14 lg:grid-cols-[1.25fr_0.75fr] lg:items-end lg:gap-24">
           {/* Main message */}
           <div>
-            <h2 className="max-w-4xl text-5xl font-extrabold leading-[0.98] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h2 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-tight text-foreground sm:text-6xl">
               Pasikalbėkime
               <br />
               apie jūsų{" "}
@@ -50,11 +50,11 @@ export default function ImonemsFinalCTA() {
               href="/kontaktai"
               className="group mt-9 inline-flex items-center gap-5"
             >
-              <span className="text-base font-semibold text-white">
+              <span className="text-base font-semibold text-foreground">
                 Pradėti pokalbį
               </span>
 
-              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--accent)]/50 text-[var(--accent)] transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-[#07101C] group-hover:shadow-[0_0_30px_rgba(78,159,166,0.25)]">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--accent)]/50 text-[var(--accent)] transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)] group-hover:text-primary-foreground group-hover:shadow-[0_0_30px_rgba(24,181,179,0.25)]">
                 <svg
                   width="20"
                   height="20"
@@ -77,13 +77,13 @@ export default function ImonemsFinalCTA() {
         </div>
 
         {/* Bottom detail */}
-        <div className="mt-24 border-t border-white/10 pt-8 lg:mt-32">
+        <div className="mt-24 border-t border-border pt-8 lg:mt-32">
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
             <p className="text-sm text-[var(--text-secondary)]">
               Individualūs kalbų mokymo sprendimai įmonėms.
             </p>
 
-            <span className="text-sm font-medium text-white/40">
+            <span className="text-sm font-medium text-muted-foreground">
               Lertman
             </span>
           </div>

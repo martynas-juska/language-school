@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Container from "@/components/Container";
 
 const steps = [
@@ -32,11 +33,11 @@ export default function ImonemsSolutionSection() {
         {/* Intro */}
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-24">
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            <span className="eyebrow">
               Mūsų požiūris
             </span>
 
-            <h2 className="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 max-w-2xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Ne kursai.
               <br />
               <span className="text-[var(--accent)]">
@@ -55,9 +56,9 @@ export default function ImonemsSolutionSection() {
         </div>
 
         {/* Main statement */}
-        <div className="relative mt-28 border-y border-white/10 py-16 lg:mt-36 lg:py-20">
+        <div className="relative mt-28 border-y border-border py-16 lg:mt-36 lg:py-20">
           <div className="grid gap-10 lg:grid-cols-[1fr_auto] lg:items-end">
-            <p className="max-w-5xl text-3xl font-medium leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <p className="max-w-5xl text-3xl font-medium leading-tight tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Kalbos mokymasis turi būti{" "}
               <span className="text-[var(--accent)]">
                 pritaikytas žmonėms,
@@ -65,11 +66,11 @@ export default function ImonemsSolutionSection() {
               o ne žmonės – pritaikyti kursui.
             </p>
 
-            {/* Interactive button */}
-            <button
-              type="button"
-              aria-label="Sužinoti daugiau apie mokymo procesą"
-              className="group flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-transparent text-[var(--accent)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-[#07101C] hover:shadow-[0_0_30px_rgba(78,159,166,0.25)]"
+            {/* Scrolls down to "Kaip tai vyksta?" */}
+            <Link
+              href="#process"
+              aria-label="Kaip vyksta mokymo procesas"
+              className="group flex h-16 w-16 shrink-0 items-center justify-center rounded-full border border-[var(--accent)]/40 bg-transparent text-[var(--accent)] transition-all duration-300 hover:-translate-y-1 hover:border-[var(--accent)] hover:bg-[var(--accent)] hover:text-primary-foreground hover:shadow-[0_0_30px_rgba(24,181,179,0.25)]"
             >
               <svg
                 width="20"
@@ -87,7 +88,7 @@ export default function ImonemsSolutionSection() {
                   strokeLinejoin="round"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
 
@@ -103,11 +104,11 @@ export default function ImonemsSolutionSection() {
             </span>
           </div>
 
-          <div className="grid border-l border-white/10 sm:grid-cols-2 lg:grid-cols-4 lg:border-l-0">
+          <div className="grid border-l border-border sm:grid-cols-2 lg:grid-cols-4 lg:border-l-0">
             {steps.map((step, index) => (
               <div
                 key={step.number}
-                className="group relative border-b border-white/10 px-6 py-8 transition-colors duration-300 hover:bg-white/[0.025] sm:min-h-[180px] sm:border-r sm:py-10 lg:border-b-0 lg:border-l lg:px-8 lg:first:border-l-0 lg:last:border-r"
+                className="group relative border-b border-border px-6 py-8 transition-colors duration-300 hover:bg-white/[0.025] sm:min-h-[180px] sm:border-r sm:py-10 lg:border-b-0 lg:border-l lg:px-8 lg:first:border-l-0 lg:last:border-r"
               >
                 {/* Connection line */}
                 {index < steps.length - 1 && (
@@ -122,12 +123,12 @@ export default function ImonemsSolutionSection() {
                     {step.number}
                   </span>
 
-                  <span className="text-white/20 transition-colors duration-300 group-hover:text-[var(--accent)]">
+                  <span className="text-foreground/20 transition-colors duration-300 group-hover:text-[var(--accent)]">
                     →
                   </span>
                 </div>
 
-                <h3 className="mt-12 max-w-[180px] text-xl font-bold leading-tight text-white sm:text-2xl">
+                <h3 className="mt-12 max-w-[180px] text-xl font-bold leading-tight text-foreground sm:text-2xl">
                   {step.title}
                 </h3>
 

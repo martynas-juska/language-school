@@ -46,15 +46,15 @@ const rightFeatures = [
   },
 ];
 
-function Feature({ f }) {
+function Feature({ f, right = false }) {
   return (
-    <div className="p-2">
-      <span className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+    <div className="glow-card group p-6">
+      <span className={`icon-tile mb-4 size-12 ${right ? "lg:ml-auto" : ""}`}>
         <svg width="26" height="26" viewBox="0 0 32 32" fill="none" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           {f.icon}
         </svg>
       </span>
-      <h3 className="mb-2 text-lg font-bold text-white">{f.title}</h3>
+      <h3 className="mb-2 text-lg font-medium text-foreground">{f.title}</h3>
       <p className="text-sm leading-relaxed text-[var(--text-body)]">{f.text}</p>
     </div>
   );
@@ -64,18 +64,20 @@ export default function TeacherProgramSection() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-center text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-          Dėstytojų Kvalifikacijos Kėlimas:
-          <br />
-          <span className="text-[var(--accent)]">„Mokymo Meistriškumo Programa“</span>
-        </h2>
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow mb-3">Dėstytojams</p>
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+            Dėstytojų kvalifikacijos kėlimas:{" "}
+            <span className="text-primary">„Mokymo meistriškumo programa“</span>
+          </h2>
+        </div>
 
         {/* 3-column: left | center icon | right */}
-        <div className="mt-16 grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-14">
+        <div className="mt-12 grid items-center gap-10 lg:grid-cols-[1fr_auto_1fr] lg:gap-14">
           {/* Left column */}
-          <div className="flex flex-col gap-10 lg:text-right">
+          <div className="flex flex-col gap-5 lg:text-right">
             {leftFeatures.map((f) => (
-              <Feature key={f.title} f={f} />
+              <Feature key={f.title} f={f} right />
             ))}
           </div>
 
@@ -99,7 +101,7 @@ export default function TeacherProgramSection() {
           </div>
 
           {/* Right column */}
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-5">
             {rightFeatures.map((f) => (
               <Feature key={f.title} f={f} />
             ))}

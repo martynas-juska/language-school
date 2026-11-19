@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { Reveal } from "@/components/Reveal";
 
 const features = [
   {
@@ -52,7 +53,7 @@ const features = [
 
 function Feature({ feature }) {
   return (
-    <article className="group relative">
+    <article className="glow-card group relative p-8">
       {/* Number */}
       <div className="flex items-center gap-4">
         <span className="text-sm font-semibold tracking-[0.16em] text-[var(--accent)]">
@@ -63,7 +64,7 @@ function Feature({ feature }) {
       </div>
 
       {/* Icon */}
-      <div className="mt-8 flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--accent)]/10 transition-transform duration-300 group-hover:-translate-y-1">
+      <div className="icon-tile mt-6 size-16 rounded-2xl">
         <svg
           width="32"
           height="32"
@@ -80,7 +81,7 @@ function Feature({ feature }) {
       </div>
 
       {/* Content */}
-      <h3 className="mt-7 text-2xl font-bold tracking-tight text-white">
+      <h3 className="mt-6 text-2xl font-medium tracking-tight text-foreground">
         {feature.title}
       </h3>
 
@@ -97,11 +98,11 @@ export default function ImonemsFeatures() {
       <Container>
         {/* Section heading */}
         <div className="max-w-3xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+          <span className="eyebrow">
             Kodėl verta rinktis „Lertman“?
           </span>
 
-          <h2 className="mt-5 text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h2 className="mt-5 text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Kalbų mokymai,
             <br />
             pritaikyti verslui.
@@ -115,11 +116,11 @@ export default function ImonemsFeatures() {
         </div>
 
         {/* Features */}
-        <div className="mt-20 grid gap-x-16 gap-y-20 md:grid-cols-2 lg:gap-x-24 lg:gap-y-24">
+        <Reveal variant="stagger" className="mt-14 grid gap-5 md:grid-cols-2">
           {features.map((feature) => (
             <Feature key={feature.number} feature={feature} />
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

@@ -1,4 +1,5 @@
 import Container from "@/components/Container";
+import { Reveal } from "@/components/Reveal";
 
 const teachers = [
   {
@@ -34,11 +35,11 @@ export default function ImonemsTeachersSection() {
         {/* Header */}
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-24">
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            <span className="eyebrow">
               Mūsų žmonės
             </span>
 
-            <h2 className="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 max-w-2xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Kalbos moko
               <br />
               <span className="text-[var(--accent)]">
@@ -57,9 +58,9 @@ export default function ImonemsTeachersSection() {
         </div>
 
         {/* Large statement */}
-        <div className="mt-24 border-y border-white/10 py-14 lg:mt-32 lg:py-16">
+        <div className="mt-24 border-y border-border py-14 lg:mt-32 lg:py-16">
           <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
-            <p className="max-w-4xl text-2xl font-medium leading-tight tracking-tight text-white sm:text-3xl lg:text-4xl">
+            <p className="max-w-4xl text-2xl font-medium leading-tight tracking-tight text-foreground sm:text-3xl lg:text-4xl">
               Tarptautinė patirtis leidžia kalbą mokytis{" "}
               <span className="text-[var(--accent)]">
                 ne tik iš vadovėlio,
@@ -85,11 +86,11 @@ export default function ImonemsTeachersSection() {
             </span>
           </div>
 
-          <div className="grid border-t border-white/10 md:grid-cols-3">
+          <Reveal variant="stagger" className="grid gap-5 md:grid-cols-3">
             {teachers.map((teacher) => (
               <article
                 key={teacher.number}
-                className="group relative border-b border-white/10 px-6 py-10 transition-colors duration-300 hover:bg-white/[0.02] md:min-h-[330px] md:border-b-0 md:border-r md:px-8 md:py-12 md:last:border-r-0"
+                className="glow-card group relative overflow-hidden px-6 py-8 md:min-h-[300px] md:px-8 md:py-10"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-sm font-bold tracking-[0.18em] text-[var(--accent)]">
@@ -101,8 +102,8 @@ export default function ImonemsTeachersSection() {
                   </span>
                 </div>
 
-                <div className="mt-16">
-                  <h3 className="max-w-xs text-2xl font-bold tracking-tight text-white transition-transform duration-300 group-hover:translate-x-1 sm:text-3xl">
+                <div className="mt-12">
+                  <h3 className="max-w-xs text-2xl font-medium tracking-tight text-foreground sm:text-[1.65rem]">
                     {teacher.title}
                   </h3>
 
@@ -115,10 +116,9 @@ export default function ImonemsTeachersSection() {
                 <span className="absolute bottom-0 left-0 h-px w-0 bg-[var(--accent)] transition-all duration-500 group-hover:w-full" />
               </article>
             ))}
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>
   );
 }
-

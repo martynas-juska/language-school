@@ -7,7 +7,7 @@ export default function Footer() {
     <footer className="mt-20 border-t border-border bg-[var(--bg)]">
       <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:justify-between">
         <div>
-          <p className="text-lg font-semibold text-foreground">Kalbų Mokykla</p>
+          <p className="text-lg font-semibold text-foreground">Lertman</p>
           <p className="mt-1 text-sm text-[var(--text-secondary)]">
             Kalbų kursai ir paslaugos
           </p>
@@ -28,7 +28,7 @@ export default function Footer() {
 
       <Container className="border-t border-border py-4">
         <p className="text-xs text-subtle">
-          © {new Date().getFullYear()} Kalbų Mokykla. Visos teisės saugomos.
+          © {new Date().getFullYear()} Lertman. Visos teisės saugomos.
         </p>
       </Container>
     </footer>

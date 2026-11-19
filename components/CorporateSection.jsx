@@ -36,10 +36,10 @@ export default function CorporateSection() {
       {/* Header: title left, quote + link right */}
       <Container className="grid items-end gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
         <Reveal>
-          <p className="mb-3 text-xs font-semibold tracking-wide text-primary uppercase">
+          <p className="eyebrow mb-3">
             <ScrambleText text="Įmonėms" />
           </p>
-          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Kursai skirti įmonėms</h2>
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">Kursai skirti įmonėms</h2>
         </Reveal>
 
         <Reveal variant="right">

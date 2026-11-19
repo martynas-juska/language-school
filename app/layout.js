@@ -14,8 +14,9 @@ const archivo = Archivo({
 });
 
 export const metadata = {
-  title: "Kalbų Mokykla",
-  description: "Kalbų kursai ir paslaugos",
+  title: { default: "Lertman – kalbų kursai ir paslaugos", template: "%s | Lertman" },
+  description:
+    "Lertman – individualūs ir grupiniai kalbų kursai nuotoliu, vertimai, dokumentų rengimas ir mokymai įmonėms.",
 };
 
 export default function RootLayout({ children }) {

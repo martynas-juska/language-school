@@ -22,6 +22,17 @@
      font-extrabold / font-bold on the site in one place. */
   --font-weight-extrabold: 600;
   --font-weight-bold: 600;
+
+  
+  /* One type scale for the whole site, closer to RickNest's. The big sizes are
+     smaller than Tailwind's defaults, so old and new section titles match:
+     section titles end at 40px, page titles (heroes) at 60px. */
+  --text-5xl: 2.5rem;
+  --text-5xl--line-height: 1.1;
+  --text-6xl: 3rem;
+  --text-6xl--line-height: 1.05;
+  --text-7xl: 3.75rem;
+  --text-7xl--line-height: 1.02;
 }
 
 @theme inline {
@@ -106,6 +117,16 @@
   }
   .glow-card:hover::before {
     opacity: 1;
+  }
+    /* The small teal label above a section title ("KURSAI", "MŪSŲ KOMANDA"…). */
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    line-height: 1.4;
+    text-transform: uppercase;
+    color: var(--color-primary);
   }
 
   /* Teal icon square that brightens when its card is hovered. */

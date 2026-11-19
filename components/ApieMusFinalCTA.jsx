@@ -30,7 +30,7 @@ export default function ApieMusFinalCTA() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-white/10 bg-[var(--bg-top)] py-24 lg:py-32"
+      className="relative overflow-hidden border-t border-border bg-[var(--bg-top)] py-24 lg:py-32"
     >
       {/* Background atmosphere */}
       <div
@@ -46,18 +46,18 @@ export default function ApieMusFinalCTA() {
       <Container>
         {/* TOP LABEL */}
         <div className="flex items-center gap-5">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+          <span className="eyebrow">
             Kitas žingsnis
           </span>
 
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-border" />
         </div>
 
         {/* MAIN LAYOUT */}
         <div className="mt-12 grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:items-start lg:gap-20 xl:gap-28">
           {/* LEFT */}
           <div className="max-w-xl lg:sticky lg:top-32">
-            <h2 className="text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h2 className="text-5xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-6xl">
               Kalba gali
               <br />
               atverti daugiau
@@ -82,13 +82,13 @@ export default function ApieMusFinalCTA() {
           {/* FORM BORDER */}
           <div className="rounded-[2rem] bg-gradient-to-br from-white/15 via-[var(--accent)]/15 to-white/[0.04] p-px">
             {/* FORM */}
-            <div className="rounded-[calc(2rem-1px)] bg-[#091421]/80 p-6 backdrop-blur-xl sm:p-8 lg:p-10">
+            <div className="rounded-[calc(2rem-1px)] bg-card/80 p-6 backdrop-blur-xl sm:p-8 lg:p-10">
               <div className="mb-9">
-                <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--accent)]">
+                <span className="eyebrow">
                   Susisiekite
                 </span>
 
-                <h3 className="mt-3 text-2xl font-bold tracking-tight text-white sm:text-3xl">
+                <h3 className="mt-3 text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                   Kuo galime padėti?
                 </h3>
               </div>
@@ -143,7 +143,7 @@ export default function ApieMusFinalCTA() {
                     value={formData.message}
                     onChange={handleChange}
                     placeholder="Papasakokite, ko norėtumėte išmokti..."
-                    className="w-full resize-none border-b border-white/10 bg-transparent px-0 py-3 text-base text-white outline-none transition-colors duration-300 placeholder:text-white/25 focus:border-[var(--accent)]"
+                    className="w-full resize-none border-b border-border bg-transparent px-0 py-3 text-base text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground/70 focus:border-[var(--accent)]"
                   />
                 </div>
 
@@ -155,7 +155,7 @@ export default function ApieMusFinalCTA() {
 
                   <button
                     type="submit"
-                    className="group inline-flex items-center justify-center gap-3 rounded-full bg-[var(--accent)] px-7 py-4 text-[15px] font-semibold text-[#07101C] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--icon-hover)] hover:shadow-[0_12px_35px_rgba(78,159,166,0.22)]"
+                    className="btn-primary group rounded-full text-[15px]"
                   >
                     <span>Siųsti žinutę</span>
 
@@ -183,14 +183,14 @@ export default function ApieMusFinalCTA() {
         </div>
 
         {/* BOTTOM DETAIL */}
-        <div className="mt-20 flex items-center gap-6 border-t border-white/10 pt-7">
+        <div className="mt-20 flex items-center gap-6 border-t border-border pt-7">
           <p className="text-sm text-[var(--text-secondary)]">
             Individualus mokymasis. Realūs tikslai. Praktinės žinios.
           </p>
 
           <span className="hidden h-px flex-1 bg-white/[0.05] sm:block" />
 
-          <span className="hidden shrink-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/30 sm:block">
+          <span className="hidden shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-muted-foreground sm:block">
             Lertman
           </span>
         </div>
@@ -228,7 +228,7 @@ function FormField({
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className="w-full border-b border-white/10 bg-transparent px-0 py-3 text-base text-white outline-none transition-colors duration-300 placeholder:text-white/25 focus:border-[var(--accent)]"
+        className="w-full border-b border-border bg-transparent px-0 py-3 text-base text-foreground outline-none transition-colors duration-300 placeholder:text-muted-foreground/70 focus:border-[var(--accent)]"
       />
     </div>
   );

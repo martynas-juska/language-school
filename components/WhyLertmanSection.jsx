@@ -47,10 +47,11 @@ export default function WhyLertmanSection() {
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left: text + button */}
         <div>
-          <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
+          <p className="eyebrow mb-3">Kodėl mes</p>
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Kodėl Lertman?
           </h2>
-          <p className="mt-6 leading-relaxed text-[var(--text-body)]">
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Pasirinkę Lertman, Jūs renkatės ne tik kalbos kursus, bet ir
             individualizuotą mokymosi patirtį, pritaikytą Jūsų unikaliems
             poreikiams ir tikslams. Mūsų mokymo procesas yra lankstus ir
@@ -69,7 +70,7 @@ export default function WhyLertmanSection() {
           {features.map((f, i) => (
             <div key={f.title} className={i % 2 === 0 ? "lg:-translate-y-6" : "lg:translate-y-6"}>
               <div className="glow-card h-full rounded-2xl p-6">
-                <div className="mb-4 inline-flex rounded-xl bg-[var(--accent)]/10 p-3">
+                <div className="icon-tile mb-4 size-12">
                   <svg
                     width="28"
                     height="28"
@@ -83,7 +84,7 @@ export default function WhyLertmanSection() {
                     {f.icon}
                   </svg>
                 </div>
-                <h3 className="mb-2 text-lg font-bold text-foreground">{f.title}</h3>
+                <h3 className="mb-2 text-lg font-medium text-foreground">{f.title}</h3>
                 <p className="text-sm leading-relaxed text-[var(--text-body)]">
                   {f.text}
                 </p>

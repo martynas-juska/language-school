@@ -17,7 +17,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b bg-background/85 backdrop-blur-md">
       <Container className="flex h-16 items-center justify-between gap-6">
         <Link href="/" className="text-lg font-semibold text-foreground" style={{ fontStretch: "112%" }}>
-          Kalbų Mokykla
+          Lertman
         </Link>
 
         <nav aria-label="Pagrindinis meniu" className="hidden items-center gap-8 md:flex">

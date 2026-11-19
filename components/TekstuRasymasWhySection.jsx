@@ -177,7 +177,7 @@ function Benefit({ benefit, isLast }) {
     <div className="relative flex gap-6">
       {/* Number + vertical line */}
       <div className="relative flex shrink-0 flex-col items-center">
-        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent)] text-lg font-semibold text-white">
+        <span className="flex h-12 w-12 items-center justify-center rounded-full border border-[var(--accent)] text-lg font-semibold text-foreground">
           {benefit.number}
         </span>
 
@@ -188,7 +188,7 @@ function Benefit({ benefit, isLast }) {
 
       {/* Content */}
       <div className="pb-12">
-        <h3 className="text-xl font-bold leading-tight text-white sm:text-2xl">
+        <h3 className="text-xl font-bold leading-tight text-foreground sm:text-2xl">
           {benefit.title}
         </h3>
 
@@ -212,11 +212,12 @@ export default function TekstuRasymasWhySection() {
 
           {/* Right: heading + benefits */}
           <div>
-            <h2 className="max-w-3xl text-4xl font-extrabold leading-[1.05] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <p className="eyebrow mb-3">Kodėl mes</p>
+            <h2 className="max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Kodėl verta rinktis „Lertman“ tekstų rašymo paslaugas?
             </h2>
 
-            <div className="mt-14">
+            <div className="mt-12">
               {benefits.map((benefit, index) => (
                 <Benefit
                   key={benefit.number}

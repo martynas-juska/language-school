@@ -13,7 +13,7 @@ export default function OtherServicesSection() {
   return (
     <section className="py-24">
       <Container>
-        <div className="relative overflow-hidden rounded-[32px]">
+        <div className="relative overflow-hidden rounded-2xl border">
           {/* Background image */}
           <Image
             src="/images/services-banner.jpg"
@@ -29,10 +29,11 @@ export default function OtherServicesSection() {
           <div className="relative grid items-center gap-10 p-10 sm:p-14 lg:grid-cols-2 lg:p-20">
             {/* Left: text + button */}
             <div>
-              <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
-                Kitos Paslaugos
+              <p className="eyebrow mb-3">Paslaugos</p>
+              <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+                Kitos paslaugos
               </h2>
-              <p className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]">
+              <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted-foreground">
                 „Lertman“ siūlo profesionalias paslaugas, padedančias siekti
                 asmeninių ir profesinių tikslų. Nuo kalbų mokymo iki su
                 dokumentais ar gyvenimu užsienyje susijusios pagalbos – esame
@@ -48,12 +49,12 @@ export default function OtherServicesSection() {
               </Link>
             </div>
 
-            {/* Right: floating glass service chips */}
+            {/* Right: floating service chips */}
             <div className="relative hidden h-72 lg:block">
               {chips.map((chip) => (
                 <div
                   key={chip.label}
-                  className="absolute rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground shadow-[0_15px_40px_rgba(0,0,0,0.35)] backdrop-blur-md"
+                  className="absolute rounded-full border border-primary/30 bg-card/70 px-4 py-2 text-sm font-medium text-foreground shadow-[0_15px_40px_-20px_rgb(24_181_179/0.6)] backdrop-blur-md"
                   style={{ top: chip.top, left: chip.left }}
                 >
                   {chip.label}

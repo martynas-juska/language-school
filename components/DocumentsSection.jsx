@@ -1,4 +1,6 @@
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
 
 const cards = [
   {
@@ -38,18 +40,16 @@ export default function DocumentsSection() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-center text-4xl font-extrabold text-white sm:text-5xl">
-          Preparation of Documents
-        </h2>
+        <SectionHeading eyebrow="Dokumentai" title="Dokumentų rengimas" center />
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <Reveal variant="stagger" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {cards.map((c) => (
             <div
               key={c.title}
-              className="group flex aspect-[9/16] flex-col items-center justify-center rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center shadow-[0_15px_60px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1"
+              className="glow-card group flex min-h-[340px] flex-col items-center justify-center p-8 text-center"
             >
               {/* Big centered icon */}
-              <span className="flex h-24 w-24 items-center justify-center rounded-3xl bg-[var(--accent)]/10">
+              <span className="icon-tile size-24 rounded-2xl">
                 <svg
                   width="52"
                   height="52"
@@ -65,7 +65,7 @@ export default function DocumentsSection() {
               </span>
 
               {/* Title */}
-              <h3 className="mt-8 text-xl font-bold text-white">{c.title}</h3>
+              <h3 className="mt-8 text-xl font-medium text-foreground">{c.title}</h3>
 
               {/* Text */}
               <p className="mt-4 text-sm leading-relaxed text-[var(--text-body)]">
@@ -73,7 +73,7 @@ export default function DocumentsSection() {
               </p>
             </div>
           ))}
-        </div>
+        </Reveal>
       </Container>
     </section>
   );

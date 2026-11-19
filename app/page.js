@@ -28,3 +28,4 @@ export default function Home() {
 }
 
 
+//Greta - Japonu, Ausra - Norvegu, Vaida - Norvegu

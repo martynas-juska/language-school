@@ -61,13 +61,12 @@ export default function TekstuRasymasSection() {
         <div className="grid gap-16 lg:grid-cols-[0.8fr_1.8fr] lg:gap-20">
           {/* Left: introduction */}
           <div>
-            <h2 className="text-5xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
-              Tekstų
-              <br />
-              Rašymas
+            <p className="eyebrow mb-3">Copywriting</p>
+            <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
+              Tekstų rašymas
             </h2>
 
-            <div className="mt-10 max-w-xl space-y-5">
+            <div className="mt-6 max-w-xl space-y-5">
               <p className="text-base leading-relaxed text-[var(--text-body)]">
                 „Lertman“ teikia profesionalias tekstų rašymo paslaugas
                 (copywriting), kurios padės Jūsų verslui išsiskirti ir

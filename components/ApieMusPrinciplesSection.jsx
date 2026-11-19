@@ -36,11 +36,11 @@ export default function ApieMusPrinciplesSection() {
         {/* HEADER */}
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-end lg:gap-24">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+            <span className="eyebrow">
               Kodėl Lertman?
             </span>
 
-            <h2 className="mt-5 max-w-3xl text-4xl font-extrabold leading-[1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-5 max-w-3xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Mokymasis,
               <br />
               sukurtas aplink
@@ -58,11 +58,11 @@ export default function ApieMusPrinciplesSection() {
         </div>
 
         {/* PRINCIPLES */}
-        <div className="mt-16 border-t border-white/10 lg:mt-20">
+        <div className="mt-16 border-t border-border lg:mt-20">
           {principles.map((item) => (
             <div
               key={item.number}
-              className="group relative border-b border-white/10 transition-colors duration-300"
+              className="group relative border-b border-border transition-colors duration-300"
             >
               {/* hover background */}
               <div
@@ -77,7 +77,7 @@ export default function ApieMusPrinciplesSection() {
                 </span>
 
                 {/* TITLE */}
-                <h3 className="text-2xl font-bold tracking-tight text-white transition-colors duration-300 group-hover:text-[var(--accent)] sm:text-3xl lg:text-[2rem]">
+                <h3 className="text-2xl font-bold tracking-tight text-foreground transition-colors duration-300 group-hover:text-[var(--accent)] sm:text-3xl lg:text-[2rem]">
                   {item.title}
                 </h3>
 
@@ -88,7 +88,7 @@ export default function ApieMusPrinciplesSection() {
 
                 {/* ARROW */}
                 <div className="hidden justify-end lg:flex">
-                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-white/10 text-white/40 transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--accent)]/40 group-hover:text-[var(--accent)]">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-all duration-300 group-hover:translate-x-1 group-hover:border-[var(--accent)]/40 group-hover:text-[var(--accent)]">
                     <svg
                       width="15"
                       height="15"

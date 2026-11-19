@@ -19,11 +19,11 @@ export default function ApieMusHero() {
         <div className="grid gap-14 py-16 lg:h-[calc(100svh-90px)] lg:min-h-[620px] lg:grid-cols-[0.92fr_1.08fr] lg:items-center lg:gap-20 lg:py-8">
           {/* LEFT */}
           <div className="relative z-10 max-w-xl">
-            <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+            <span className="eyebrow">
               Apie Lertman
             </span>
 
-            <h1 className="mt-5 text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-[4.5rem] xl:text-[5rem]">
+            <h1 className="mt-5 text-5xl font-semibold leading-[1.02] tracking-tight text-foreground sm:text-6xl lg:text-7xl" style={{ fontStretch: "118%" }}>
               Kalba –
               <br />
               daugiau nei
@@ -41,11 +41,11 @@ export default function ApieMusHero() {
               <span className="h-full rounded-full bg-[var(--accent)]" />
 
               <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)]">
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--text-secondary)]">
                   Mūsų požiūris
                 </span>
 
-                <p className="mt-2 text-base font-medium leading-relaxed text-white/90">
+                <p className="mt-2 text-base font-medium leading-relaxed text-foreground/90">
                   Mokymasis turi prisitaikyti prie žmogaus, o ne žmogus prie
                   standartinės programos.
                 </p>
@@ -55,7 +55,7 @@ export default function ApieMusHero() {
 
           {/* RIGHT */}
           <div className="relative flex justify-end">
-            <div className="relative w-full max-w-[610px] overflow-hidden rounded-[2rem] border border-white/[0.08] lg:h-[min(68svh,590px)] lg:min-h-[470px]">
+            <div className="relative w-full max-w-[610px] overflow-hidden rounded-[2rem] border border-border lg:h-[min(68svh,590px)] lg:min-h-[470px]">
               <Image
                 src="/images/apie-mus/hero.jpg"
                 alt="Lertman kalbų mokykla"
@@ -66,15 +66,15 @@ export default function ApieMusHero() {
               />
 
               {/* Image treatment */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#07101C]/70 via-[#07101C]/5 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/70 via-background/5 to-transparent" />
 
               <div className="absolute inset-x-0 bottom-0 p-7 sm:p-8">
                 <div className="flex items-end justify-between gap-8 border-t border-white/20 pt-5">
-                  <p className="max-w-sm text-sm leading-relaxed text-white/80">
+                  <p className="max-w-sm text-sm leading-relaxed text-foreground/80">
                     Mokymasis, paremtas žmogumi, jo tikslais ir realiu gyvenimu.
                   </p>
 
-                  <span className="shrink-0 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+                  <span className="shrink-0 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
                     Lertman
                   </span>
                 </div>

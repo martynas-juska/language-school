@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import Container from "@/components/Container";
 
 function CountUp({ target, duration = 1800 }) {
   const [count, setCount] = useState(0);
@@ -40,13 +41,14 @@ function CountUp({ target, duration = 1800 }) {
 export default function WhyUsSection() {
   return (
     <section className="bg-[var(--bg)] py-24">
-      <div className="mx-auto grid max-w-[1500px] items-center gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:px-16">
+      <Container className="grid items-center gap-16 lg:grid-cols-2">
         {/* Left: text + stats card */}
         <div>
-          <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
+          <p className="eyebrow mb-3">Apie Lertman</p>
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl lg:text-5xl">
             Kas daro mūsų kalbų mokyklą išskirtinę?
           </h2>
-          <p className="mt-6 leading-relaxed text-[var(--text-body)]">
+          <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Mūsų mokykla yra daugiau nei tik kalbos kursai – tai vieta, kur
             asmeninė pažanga susitinka su profesionalumu. Didžiuojamės kiekvienu
             studentu ir taikome unikalią mokymo metodiką, pritaikytą
@@ -104,7 +106,7 @@ export default function WhyUsSection() {
             />
           </div>
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

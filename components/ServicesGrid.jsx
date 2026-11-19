@@ -1,8 +1,10 @@
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
 
 const services = [
   {
-    title: "Preparation of Documents",
+    title: "Dokumentų rengimas",
     text: "Padedame parengti ir sutvarkyti dokumentus darbui, studijoms ar gyvenimui užsienyje, įskaitant medicinos autorizacijas Norvegijoje.",
     icon: (
       <>
@@ -12,7 +14,7 @@ const services = [
     ),
   },
   {
-    title: "Professional Translations",
+    title: "Profesionalūs vertimai",
     text: "Aukštos kokybės vertimai – teisiniai, techniniai, medicininiai, finansiniai ir asmeninių dokumentų. Notarinis arba biuro tvirtinimas.",
     icon: (
       <>
@@ -22,7 +24,7 @@ const services = [
     ),
   },
   {
-    title: "Korepetitoriaus Paslaugos",
+    title: "Korepetitoriaus paslaugos",
     text: "Individualios pamokos, pritaikytos Jūsų poreikiams ir mokymosi tempui – žinių gilinimui, egzaminų ruošimui ar asmeniniams tikslams.",
     icon: (
       <>
@@ -32,7 +34,7 @@ const services = [
     ),
   },
   {
-    title: "Dėstytojų Kvalifikacijos Kėlimas",
+    title: "Dėstytojų kvalifikacijos kėlimas",
     text: "„Mokymo Meistriškumo Programa“ – modernios pedagoginės technikos, diferencijuotas mokymas ir įtraukiančio mokymosi proceso kūrimas.",
     icon: (
       <>
@@ -42,7 +44,7 @@ const services = [
     ),
   },
   {
-    title: "Tekstų Rašymas",
+    title: "Tekstų rašymas",
     text: "Profesionalus copywriting lietuvių ir norvegų kalbomis – reklaminiai tekstai, svetainių turinys, tinklaraščiai ir socialinių tinklų turinys.",
     icon: (
       <>
@@ -52,7 +54,7 @@ const services = [
     ),
   },
   {
-    title: "Individualios Paslaugos",
+    title: "Individualios paslaugos",
     text: "Esame lankstūs ir prisitaikome prie Jūsų specifinių poreikių – susisiekite ir aptarsime Jūsų individualų projektą.",
     icon: (
       <>
@@ -65,15 +67,16 @@ const services = [
 export default function ServicesGrid() {
   return (
     <section className="bg-[var(--bg)] py-24">
-      <div className="mx-auto max-w-[1600px] px-6 sm:px-10 lg:px-16">
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <Container>
+        <SectionHeading eyebrow="Visos paslaugos" title="Kuo galime padėti" center />
+        <Reveal variant="stagger" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {services.map((s) => (
             <div
               key={s.title}
-              className="group flex aspect-[5/4] flex-col items-center justify-center rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-8 text-center shadow-[0_15px_60px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1"
+              className="glow-card group flex min-h-[260px] flex-col items-center justify-center p-8 text-center"
             >
               {/* Icon on top */}
-              <span className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[var(--accent)]/10">
+              <span className="icon-tile size-16 rounded-2xl">
                 <svg
                   width="32"
                   height="32"
@@ -89,7 +92,7 @@ export default function ServicesGrid() {
               </span>
 
               {/* H3 in the middle */}
-              <h3 className="mt-6 text-xl font-bold text-white">{s.title}</h3>
+              <h3 className="mt-6 text-xl font-medium text-foreground">{s.title}</h3>
 
               {/* Text under */}
               <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)]">
@@ -97,8 +100,8 @@ export default function ServicesGrid() {
               </p>
             </div>
           ))}
-        </div>
-      </div>
+        </Reveal>
+      </Container>
     </section>
   );
 }

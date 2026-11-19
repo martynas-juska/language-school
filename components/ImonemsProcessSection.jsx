@@ -33,11 +33,11 @@ export default function ImonemsProcessSection() {
         {/* Header */}
         <div className="grid gap-10 lg:grid-cols-[1fr_1fr] lg:gap-24">
           <div>
-            <span className="text-sm font-semibold uppercase tracking-[0.18em] text-[var(--accent)]">
+            <span className="eyebrow">
               Kaip tai vyksta?
             </span>
 
-            <h2 className="mt-6 max-w-2xl text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h2 className="mt-6 max-w-2xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Paprastas procesas.
               <br />
               <span className="text-[var(--accent)]">
@@ -56,10 +56,10 @@ export default function ImonemsProcessSection() {
 
         {/* Process */}
         <div className="mt-24 lg:mt-32">
-          {process.map((item, index) => (
+          {process.map((item) => (
             <div
               key={item.number}
-              className="group relative grid border-t border-white/10 py-10 transition-colors duration-300 hover:bg-white/[0.015] sm:py-12 lg:grid-cols-[120px_1fr_1.2fr] lg:items-center lg:gap-12 lg:py-14"
+              className="group relative grid border-t border-border py-10 transition-colors duration-300 hover:bg-white/[0.015] sm:py-12 lg:grid-cols-[120px_1fr_1.2fr] lg:items-center lg:gap-12 lg:py-14"
             >
               {/* Number */}
               <div className="flex items-center justify-between lg:block">
@@ -68,14 +68,14 @@ export default function ImonemsProcessSection() {
                 </span>
 
                 {/* Mobile arrow */}
-                <span className="text-xl text-white/20 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)] lg:hidden">
+                <span className="text-xl text-foreground/20 transition-all duration-300 group-hover:translate-x-1 group-hover:text-[var(--accent)] lg:hidden">
                   →
                 </span>
               </div>
 
               {/* Title */}
               <div className="mt-7 lg:mt-0">
-                <h3 className="text-3xl font-bold tracking-tight text-white transition-transform duration-300 group-hover:translate-x-1 sm:text-4xl">
+                <h3 className="text-3xl font-bold tracking-tight text-foreground transition-transform duration-300 group-hover:translate-x-1 sm:text-4xl">
                   {item.title}
                 </h3>
               </div>
@@ -87,7 +87,7 @@ export default function ImonemsProcessSection() {
                 </p>
 
                 {/* Desktop arrow */}
-                <span className="hidden shrink-0 text-2xl text-white/15 transition-all duration-300 group-hover:translate-x-2 group-hover:text-[var(--accent)] lg:block">
+                <span className="hidden shrink-0 text-2xl text-foreground/15 transition-all duration-300 group-hover:translate-x-2 group-hover:text-[var(--accent)] lg:block">
                   →
                 </span>
               </div>
@@ -98,7 +98,7 @@ export default function ImonemsProcessSection() {
           ))}
 
           {/* Closing line */}
-          <div className="flex items-center gap-5 border-t border-white/10 pt-10">
+          <div className="flex items-center gap-5 border-t border-border pt-10">
             <span className="h-px w-12 bg-[var(--accent)]" />
 
             <span className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-secondary)]">

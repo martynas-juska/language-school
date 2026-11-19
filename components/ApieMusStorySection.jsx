@@ -6,17 +6,17 @@ export default function ApieMusStorySection() {
       <Container>
         {/* Section label */}
         <div className="flex items-center gap-5">
-          <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--accent)]">
+          <span className="eyebrow">
             Kas mes esame
           </span>
 
-          <span className="h-px flex-1 bg-white/10" />
+          <span className="h-px flex-1 bg-border" />
         </div>
 
         {/* Main editorial statement */}
         <div className="mt-14 grid gap-14 lg:grid-cols-[1.15fr_0.85fr] lg:items-end lg:gap-24">
           <div>
-            <h2 className="max-w-4xl text-4xl font-extrabold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+            <h2 className="max-w-4xl text-3xl font-semibold leading-[1.08] tracking-tight text-foreground sm:text-4xl lg:text-5xl">
               Kalbos mokymasis
               <br />
               turi prisitaikyti
@@ -40,13 +40,13 @@ export default function ApieMusStorySection() {
         </div>
 
         {/* Supporting principles */}
-        <div className="mt-20 grid border-t border-white/10 sm:grid-cols-3 lg:mt-28">
-          <div className="border-b border-white/10 py-7 sm:border-b-0 sm:border-r sm:pr-8">
+        <div className="mt-20 grid border-t border-border sm:grid-cols-3 lg:mt-28">
+          <div className="border-b border-border py-7 sm:border-b-0 sm:border-r sm:pr-8">
             <span className="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">
               01
             </span>
 
-            <p className="mt-4 text-lg font-semibold text-white">
+            <p className="mt-4 text-lg font-semibold text-foreground">
               Žmogus pirmiausia
             </p>
 
@@ -55,12 +55,12 @@ export default function ApieMusStorySection() {
             </p>
           </div>
 
-          <div className="border-b border-white/10 py-7 sm:border-b-0 sm:border-r sm:px-8">
+          <div className="border-b border-border py-7 sm:border-b-0 sm:border-r sm:px-8">
             <span className="text-xs font-semibold tracking-[0.18em] text-[var(--accent)]">
               02
             </span>
 
-            <p className="mt-4 text-lg font-semibold text-white">
+            <p className="mt-4 text-lg font-semibold text-foreground">
               Kalba gyvenimui
             </p>
 
@@ -74,7 +74,7 @@ export default function ApieMusStorySection() {
               03
             </span>
 
-            <p className="mt-4 text-lg font-semibold text-white">
+            <p className="mt-4 text-lg font-semibold text-foreground">
               Reali pažanga
             </p>
 
