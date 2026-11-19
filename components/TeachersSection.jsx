@@ -1,51 +1,43 @@
-"use client";
-
 import Image from "next/image";
 import Container from "@/components/Container";
-
-const teachers = [
-  { name: "Vaida Korickė", lang: "Norvegų", image: "/images/teacher-1.jpg" },
-  { name: "Vaida Korickė", lang: "Švedų", image: "/images/teacher-2.jpg" },
-  { name: "Vaida Korickė", lang: "Anglų", image: "/images/teacher-3.jpg" },
-  { name: "Vaida Korickė", lang: "Ispanų", image: "/images/teacher-4.jpg" },
-];
+import { teachers } from "@/lib/teachers";
 
 export default function TeachersSection() {
   return (
-    <section className="overflow-hidden bg-[var(--bg)] py-24">
-      {/* Heading stays contained */}
+    <section className="bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-center text-4xl font-extrabold text-white sm:text-5xl">
+        <h2 className="text-center text-4xl font-extrabold text-foreground sm:text-5xl">
           Profesionali Mokytojų Komanda
         </h2>
-        <p className="mx-auto mt-4 max-w-4xl text-center text-lg text-[var(--text-secondary)]">
+        <p className="mx-auto mt-4 max-w-3xl text-center text-lg text-[var(--text-secondary)]">
           Lertman didžiuojasi subūręs profesionalų komandą, kurią sudaro patyrę
           dėstytojai, įgiję vertingą patirtį gyvendami ir dirbdami šalyse, kurių
           kalbas jie dėsto.
         </p>
-      </Container>
 
-      {/* Full-bleed grid — breaks out of container, wide cards */}
-      <div className="mt-16 grid grid-cols-1 gap-6 px-6 sm:grid-cols-2 sm:px-10 lg:grid-cols-4 lg:px-16">
-        {teachers.map((t, i) => (
-          <div
-            key={i}
-            className="group relative aspect-[2/3] w-full overflow-hidden rounded-3xl"
-          >
-            <Image
-              src={t.image}
-              alt={t.name}
-              fill
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6">
-              <p className="text-sm font-medium text-[var(--accent)]">{t.lang}</p>
-              <h3 className="text-xl font-bold text-white">{t.name}</h3>
-            </div>
-          </div>
-        ))}
-      </div>
+        {/* 3 teachers: one column on phones, three side by side from tablets up */}
+        <div className="mx-auto mt-16 grid max-w-md gap-6 md:max-w-none md:grid-cols-3">
+          {teachers.map((t) => (
+            <article
+              key={`${t.name}-${t.language}`}
+              className="glow-card group relative aspect-[3/4] overflow-hidden rounded-2xl"
+            >
+              <Image
+                src={t.image}
+                alt={`${t.name}, ${t.language}`}
+                fill
+                sizes="(min-width: 768px) 33vw, 100vw"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+              <div className="absolute inset-x-0 bottom-0 p-6">
+                <p className="text-xs font-semibold tracking-[0.15em] text-[var(--accent)] uppercase">{t.language}</p>
+                <h3 className="mt-2 text-2xl font-bold text-foreground">{t.name}</h3>
+              </div>
+            </article>
+          ))}
+        </div>
+      </Container>
     </section>
   );
 }

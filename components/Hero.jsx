@@ -2,45 +2,55 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
 
-export default function Hero() {
-  return (
-    <section className="relative overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 -z-10">
-        <Image
-          src="/images/language-hero.jpg"
-          alt=""
-          fill
-          priority
-          className="object-cover"
-        />
-        {/* Gradient overlay: dark base + brand tint */}
-        {/* <div className="absolute inset-0 bg-[#050816]/70" />
-        <div className="absolute inset-0 bg-gradient-to-br from-[#7A3CFF]/25 via-transparent to-[#4AB8FF]/15" /> */}
-      </div>
+const HEADLINE = "We Make Amazing Things Every Day.";
 
-      <Container className="flex min-h-screen flex-col justify-center py-24">
+/** A delay for the CSS load animation (.rv-load in globals.css). */
+const delay = (seconds) => ({ "--d": `${seconds}s` });
+
+export default function Hero() {
+  const words = HEADLINE.split(" ");
+  const after = 0.15 + words.length * 0.06; // when the headline has finished
+
+  return (
+    <section className="relative isolate overflow-hidden">
+      {/* Photo, faded into the page colour so the text stays readable */}
+      <div className="absolute inset-0 -z-20">
+        <Image src="/images/language-hero.jpg" alt="" fill priority className="object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/85 to-background/40" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
+      </div>
+      {/* Faint grid + slowly drifting teal glow */}
+      <div aria-hidden="true" className="hero-backdrop pointer-events-none absolute inset-0 -z-10" />
+
+      <Container className="flex min-h-[calc(100svh-4rem)] flex-col justify-center py-24">
         <div className="max-w-3xl">
-          <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl">
-            We Make Amazing Things Every Day.
+          <h1
+            className="text-4xl leading-[1.05] font-semibold tracking-tight text-foreground sm:text-6xl lg:text-7xl"
+            style={{ fontStretch: "118%" }}
+          >
+            {words.map((word, i) => (
+              <span key={i}>
+                <span className="rv-load inline-block" style={delay(0.15 + i * 0.06)}>
+                  {word}
+                </span>
+                {i < words.length - 1 && " "}
+              </span>
+            ))}
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg text-[#C8D2E8]">
-            Practical knowledge and real-world skills to help you grow, achieve,
-            and inspire.
+          <p className="rv-load mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground" style={delay(after)}>
+            Practical knowledge and real-world skills to help you grow, achieve, and inspire.
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="#"
-              className="rounded-[18px] bg-[#7A3CFF] px-8 py-4 font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[#8F53FF] hover:shadow-[0_12px_35px_rgba(122,60,255,0.30)]"
-            >
+          <div className="rv-load mt-10 flex flex-wrap gap-3" style={delay(after + 0.12)}>
+            <Link href="#" className="btn-primary text-base">
               Registruotis
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12" />
+                <polyline points="12 5 19 12 12 19" />
+              </svg>
             </Link>
-            <Link
-              href="#"
-              className="rounded-[18px] border border-[#AAB7D4] px-8 py-4 font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-white/[0.08]"
-            >
+            <Link href="/kontaktai" className="btn-outline text-base">
               Susisiekti
             </Link>
           </div>

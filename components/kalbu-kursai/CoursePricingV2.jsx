@@ -1,4 +1,7 @@
 import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
+import { ArrowRight } from "@/components/Icons";
 
 const languages = [
   { name: "Anglų", individual: "22 € / 60 min", group: "9 € / 45 min" },
@@ -17,16 +20,7 @@ const languages = [
 
 function FlagIcon() {
   return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="var(--accent)"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M4 21V4a1 1 0 011-1h13l-2 5 2 5H5" />
     </svg>
   );
@@ -36,50 +30,41 @@ export default function CoursePricingV2() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10 lg:px-16">
-        <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
-          Kokių kalbų mokome?
-        </h2>
+        <SectionHeading eyebrow="Kainos" title="Kokių kalbų mokome?" />
 
-        <div className="mt-12 space-y-4">
+        <Reveal as="ul" variant="stagger" className="mt-12 space-y-3">
           {languages.map((lang) => (
-            <div
+            <li
               key={lang.name}
-              className="flex flex-col gap-6 rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-[0_15px_60px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1 md:flex-row md:items-center md:gap-8 md:px-8"
+              className="glow-card group flex flex-col gap-5 p-5 md:flex-row md:items-center md:gap-8 md:px-6"
             >
               {/* Icon + name */}
-              <div className="flex items-center gap-4 md:w-1/4">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+              <div className="flex items-center gap-3 md:w-1/4">
+                <span className="icon-tile">
                   <FlagIcon />
                 </span>
-                <h3 className="text-xl font-bold text-white">{lang.name}</h3>
+                <h3 className="text-lg font-medium text-foreground">{lang.name}</h3>
               </div>
 
-              {/* Prices — spread across the middle */}
+              {/* Prices */}
               <div className="flex flex-1 flex-col gap-4 sm:flex-row sm:gap-12">
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">
-                    Individualios
-                  </p>
-                  <p className="mt-1 font-semibold text-white">{lang.individual}</p>
+                  <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">Individualios</p>
+                  <p className="mt-1 font-medium text-foreground">{lang.individual}</p>
                 </div>
                 <div>
-                  <p className="text-xs uppercase tracking-wide text-[var(--text-secondary)]">
-                    Grupėje
-                  </p>
-                  <p className="mt-1 font-semibold text-white">{lang.group}</p>
+                  <p className="text-xs font-medium tracking-wide text-muted-foreground uppercase">Grupėje</p>
+                  <p className="mt-1 font-medium text-foreground">{lang.group}</p>
                 </div>
               </div>
 
-              {/* Button */}
-              <Link
-                href="/kalbu-kursai"
-                className="rounded-[14px] bg-[var(--accent)] px-8 py-3 text-center font-semibold text-white transition-all duration-200 hover:bg-[var(--accent-hover)] md:shrink-0"
-              >
+              <Link href="/kontaktai" className="btn-primary btn-sm md:w-auto">
                 Registruotis
+                <ArrowRight />
               </Link>
-            </div>
+            </li>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

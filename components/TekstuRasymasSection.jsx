@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import { Reveal } from "@/components/Reveal";
+import { ArrowRight } from "@/components/Icons";
 
 const services = [
   {
@@ -36,19 +38,19 @@ const services = [
 
 function ServiceItem({ service }) {
   return (
-    <div className="group">
-      <span className="text-sm font-semibold tracking-[0.12em] text-[var(--accent)]">
+    <li className="glow-card group flex flex-col p-6">
+      <span className="inline-flex w-fit items-center rounded-md border border-primary/30 bg-primary/10 px-2 py-0.5 text-xs font-semibold tracking-wider text-primary">
         {service.number}
       </span>
 
-      <h3 className="mt-4 text-xl font-bold leading-tight text-white">
+      <h3 className="mt-4 text-lg font-medium leading-tight text-foreground">
         {service.title}
       </h3>
 
-      <p className="mt-3 text-sm leading-relaxed text-[var(--text-body)]">
+      <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {service.text}
       </p>
-    </div>
+    </li>
   );
 }
 
@@ -59,7 +61,7 @@ export default function TekstuRasymasSection() {
         <div className="grid gap-16 lg:grid-cols-[0.8fr_1.8fr] lg:gap-20">
           {/* Left: introduction */}
           <div>
-            <h2 className="text-5xl font-extrabold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h2 className="text-5xl font-semibold leading-[0.95] tracking-tight text-foreground sm:text-6xl lg:text-7xl">
               Tekstų
               <br />
               Rašymas
@@ -89,18 +91,19 @@ export default function TekstuRasymasSection() {
 
             <Link
               href="#contact"
-              className="mt-10 inline-block rounded-[18px] bg-[var(--accent)] px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+              className="mt-10 btn-primary text-base"
             >
-              Kontaktai
+              Susisiekti
+              <ArrowRight />
             </Link>
           </div>
 
           {/* Right: services */}
-          <div className="grid gap-x-12 gap-y-14 sm:grid-cols-2">
+          <Reveal as="ul" variant="stagger" className="grid gap-5 sm:grid-cols-2">
             {services.map((service) => (
               <ServiceItem key={service.number} service={service} />
             ))}
-          </div>
+          </Reveal>
         </div>
       </Container>
     </section>

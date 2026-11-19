@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { ArrowRight } from "@/components/Icons";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ export default function ContactForm() {
   function handleSubmit(e) {
     e.preventDefault();
 
-    // TODO: Connect this to your backend / email service.
+    // TODO: send it (server action + email). For now it only logs.
     console.log("Form submitted:", formData);
   }
 
@@ -32,14 +33,12 @@ export default function ContactForm() {
       className="bg-[var(--bg)] px-6 py-24 sm:px-10 lg:px-16"
     >
       <div className="mx-auto max-w-3xl">
-        <div className="rounded-[32px] border border-[var(--card-border)] bg-[var(--card)] p-8 shadow-[0_25px_80px_rgba(0,0,0,0.4)] sm:p-10 lg:p-14">
+        <div className="rounded-2xl border bg-card p-8 shadow-[0_30px_80px_-40px_color-mix(in_oklab,var(--color-primary)_45%,transparent)] sm:p-10 lg:p-12">
           {/* Heading */}
           <div>
-            {/* <span className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">
-              Susisiekime
-            </span> */}
+            <p className="text-xs font-semibold tracking-wide text-primary uppercase">Kontaktai</p>
 
-            <h2 className="mt-3 text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">
               Susisiekime!
             </h2>
 
@@ -49,14 +48,14 @@ export default function ContactForm() {
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
             {/* Name */}
             <div>
               <label
                 htmlFor="name"
-                className="mb-2 block text-sm font-medium text-white"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
-                Name
+                Vardas
               </label>
 
               <input
@@ -65,9 +64,9 @@ export default function ContactForm() {
                 type="text"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="Your name"
+                placeholder="Jūsų vardas"
                 required
-                className="w-full rounded-2xl border border-white/10 bg-[var(--bg)] px-5 py-4 text-white outline-none transition-all placeholder:text-[var(--text-secondary)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/10"
+                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-primary focus:ring-3 focus:ring-primary/25"
               />
             </div>
 
@@ -75,9 +74,9 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="email"
-                className="mb-2 block text-sm font-medium text-white"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
-                Email<span className="ml-1 text-[var(--accent)]">*</span>
+                El. paštas<span className="ml-1 text-[var(--accent)]">*</span>
               </label>
 
               <input
@@ -86,9 +85,9 @@ export default function ContactForm() {
                 type="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="you@example.com"
+                placeholder="vardas@email.lt"
                 required
-                className="w-full rounded-2xl border border-white/10 bg-[var(--bg)] px-5 py-4 text-white outline-none transition-all placeholder:text-[var(--text-secondary)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/10"
+                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-primary focus:ring-3 focus:ring-primary/25"
               />
             </div>
 
@@ -96,9 +95,9 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="phone"
-                className="mb-2 block text-sm font-medium text-white"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
-                Phone
+                Telefonas
               </label>
 
               <input
@@ -107,8 +106,8 @@ export default function ContactForm() {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="+370 ..."
-                className="w-full rounded-2xl border border-white/10 bg-[var(--bg)] px-5 py-4 text-white outline-none transition-all placeholder:text-[var(--text-secondary)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/10"
+                placeholder="+370"
+                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-primary focus:ring-3 focus:ring-primary/25"
               />
             </div>
 
@@ -116,9 +115,9 @@ export default function ContactForm() {
             <div>
               <label
                 htmlFor="message"
-                className="mb-2 block text-sm font-medium text-white"
+                className="mb-2 block text-sm font-medium text-foreground"
               >
-                Message
+                Žinutė
               </label>
 
               <textarea
@@ -126,19 +125,20 @@ export default function ContactForm() {
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                placeholder="Tell us about your project..."
+                placeholder="Jūsų žinutė..."
                 rows={6}
                 required
-                className="w-full resize-none rounded-2xl border border-white/10 bg-[var(--bg)] px-5 py-4 text-white outline-none transition-all placeholder:text-[var(--text-secondary)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/10"
+                className="w-full resize-none rounded-xl border border-input bg-background px-4 py-3 text-foreground outline-none transition-all placeholder:text-muted-foreground/70 focus:border-primary focus:ring-3 focus:ring-primary/25"
               />
             </div>
 
             {/* Submit */}
             <button
               type="submit"
-              className="w-full rounded-2xl bg-[var(--accent)] px-8 py-4 text-base font-semibold text-white transition-all duration-200 hover:-translate-y-1 hover:bg-[var(--accent-hover)] hover:shadow-[0_15px_40px_var(--hero-glow)] active:translate-y-0"
+              className="btn-primary w-full text-base"
             >
-              Send Message
+              Siųsti žinutę
+              <ArrowRight />
             </button>
           </form>
         </div>

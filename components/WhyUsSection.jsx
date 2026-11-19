@@ -31,7 +31,7 @@ function CountUp({ target, duration = 1800 }) {
   }, [target, duration]);
 
   return (
-    <span ref={ref} className="text-5xl font-extrabold text-white">
+    <span ref={ref} className="text-5xl font-extrabold text-foreground">
       {count.toLocaleString("lt-LT")}
     </span>
   );
@@ -43,7 +43,7 @@ export default function WhyUsSection() {
       <div className="mx-auto grid max-w-[1500px] items-center gap-16 px-6 sm:px-10 lg:grid-cols-2 lg:px-16">
         {/* Left: text + stats card */}
         <div>
-          <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
             Kas daro mūsų kalbų mokyklą išskirtinę?
           </h2>
           <p className="mt-6 leading-relaxed text-[var(--text-body)]">
@@ -57,7 +57,7 @@ export default function WhyUsSection() {
           </p>
 
           {/* Stats card */}
-          <div className="mt-10 rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-8 shadow-[0_15px_60px_rgba(0,0,0,0.35)]">
+          <div className="mt-10 glow-card rounded-2xl p-8">
             <p className="text-sm text-[var(--text-secondary)]">
               Studentų, kuriems padėjome:
             </p>
@@ -76,7 +76,7 @@ export default function WhyUsSection() {
           {/* Button */}
           <Link
             href="/apie-mus"
-            className="mt-8 inline-block rounded-[18px] bg-[var(--accent)] px-8 py-4 font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+            className="mt-8 btn-primary text-base"
           >
             Apie Mus
           </Link>

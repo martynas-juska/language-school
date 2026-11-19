@@ -4,10 +4,10 @@ import Container from "@/components/Container";
 
 export default function Footer() {
   return (
-    <footer className="mt-20 border-t border-white/10 bg-[var(--bg)]">
+    <footer className="mt-20 border-t border-border bg-[var(--bg)]">
       <Container className="flex flex-col gap-6 py-10 sm:flex-row sm:justify-between">
         <div>
-          <p className="text-lg font-semibold text-white">Kalbų Mokykla</p>
+          <p className="text-lg font-semibold text-foreground">Kalbų Mokykla</p>
           <p className="mt-1 text-sm text-[var(--text-secondary)]">
             Kalbų kursai ir paslaugos
           </p>
@@ -18,7 +18,7 @@ export default function Footer() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-[var(--text-secondary)] transition-colors hover:text-white"
+              className="text-sm text-[var(--text-secondary)] transition-colors hover:text-foreground"
             >
               {link.label}
             </Link>
@@ -26,8 +26,8 @@ export default function Footer() {
         </nav>
       </Container>
 
-      <Container className="border-t border-white/10 py-4">
-        <p className="text-xs text-[#667089]">
+      <Container className="border-t border-border py-4">
+        <p className="text-xs text-subtle">
           © {new Date().getFullYear()} Kalbų Mokykla. Visos teisės saugomos.
         </p>
       </Container>

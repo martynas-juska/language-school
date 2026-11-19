@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import SectionHeading from "@/components/SectionHeading";
+import { Check } from "@/components/Icons";
 
 const languages = [
   {
@@ -94,9 +96,7 @@ export default function LanguagesTabEurope() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10 lg:px-16">
-        <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
-          Europos Kalbos
-        </h2>
+        <SectionHeading eyebrow="Kalbos" title="Europos kalbos" />
 
         {/* Tab bar */}
         <div className="mt-10 flex flex-wrap gap-3">
@@ -104,11 +104,9 @@ export default function LanguagesTabEurope() {
             <button
               key={l.name}
               onClick={() => setActive(i)}
-              className={`rounded-full px-5 py-2 text-sm font-semibold transition-all duration-200 ${
-                i === active
-                  ? "bg-[var(--accent)] text-white"
-                  : "border border-[var(--card-border)] text-[var(--text-secondary)] hover:text-white"
-              }`}
+              type="button"
+              aria-pressed={i === active}
+              className="chip"
             >
               {l.name}
             </button>
@@ -119,8 +117,8 @@ export default function LanguagesTabEurope() {
         <div className="mt-12 grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Left: text */}
           <div>
-            <h3 className="text-3xl font-extrabold text-white">{lang.title}</h3>
-            <p className="mt-3 text-xl font-semibold text-[var(--accent)]">
+            <h3 className="text-3xl font-semibold tracking-tight text-foreground">{lang.title}</h3>
+            <p className="mt-3 text-lg font-medium text-primary">
               {lang.tagline}
             </p>
             <p className="mt-6 leading-relaxed text-[var(--text-body)]">
@@ -129,16 +127,20 @@ export default function LanguagesTabEurope() {
 
             <ul className="mt-6 space-y-3 text-[var(--text-body)]">
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Check className="size-3" />
+                </span>
                 <span>
-                  <span className="font-semibold text-white">Siūlomi kursai: </span>
+                  <span className="font-medium text-foreground">Siūlomi kursai: </span>
                   {lang.courses}
                 </span>
               </li>
               <li className="flex gap-3">
-                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[var(--accent)]" />
+                <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-primary/15 text-primary">
+                  <Check className="size-3" />
+                </span>
                 <span>
-                  <span className="font-semibold text-white">Kaina nuo: </span>
+                  <span className="font-medium text-foreground">Kaina nuo: </span>
                   {lang.price}
                 </span>
               </li>
@@ -146,7 +148,7 @@ export default function LanguagesTabEurope() {
           </div>
 
           {/* Right: 3:2 image */}
-          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-3xl">
+          <div className="relative aspect-[3/2] w-full overflow-hidden rounded-2xl border">
             <Image
               src={lang.image}
               alt={lang.title}

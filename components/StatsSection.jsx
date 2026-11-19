@@ -40,7 +40,7 @@ function CountUp({ target, superscript, duration = 1800 }) {
 
   return (
     <span ref={ref} className="inline-flex items-start">
-      <span className="text-6xl font-extrabold text-white lg:text-7xl">
+      <span className="text-6xl font-extrabold text-foreground lg:text-7xl">
         {count.toLocaleString("lt-LT")}
       </span>
       {superscript && (
@@ -56,7 +56,7 @@ export default function StatsSection() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+        <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
           Patirtis kuria galite pasitikėti
         </h2>
         <p className="mt-4 max-w-2xl text-lg text-[var(--text-secondary)]">
@@ -65,7 +65,7 @@ export default function StatsSection() {
           pasaulį.
         </p>
 
-        <div className="mt-16 grid gap-6 rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-10 shadow-[0_15px_60px_rgba(0,0,0,0.35)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 glow-card rounded-2xl p-10 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, i) => (
             <div
               key={i}

@@ -4,6 +4,9 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
+import { ArrowRight } from "@/components/Icons";
 
 const courses = [
   { title: "Individualios pamokos", desc: "Mokymasis pritaikytas tik Jums – pagal Jūsų tempą ir tikslus.", image: "/images/course-1.jpg" },
@@ -19,72 +22,65 @@ export default function CoursesSection() {
   const drag = useRef({ startX: 0, scrollLeft: 0 });
 
   const onPointerDown = (e) => {
-    const track = trackRef.current;
     setIsDragging(true);
-    drag.current = { startX: e.pageX, scrollLeft: track.scrollLeft };
+    drag.current = { startX: e.pageX, scrollLeft: trackRef.current.scrollLeft };
   };
-
   const onPointerMove = (e) => {
     if (!isDragging) return;
     e.preventDefault();
-    const track = trackRef.current;
-    const walk = e.pageX - drag.current.startX;
-    track.scrollLeft = drag.current.scrollLeft - walk;
+    trackRef.current.scrollLeft = drag.current.scrollLeft - (e.pageX - drag.current.startX);
   };
-
   const stopDrag = () => setIsDragging(false);
 
   return (
     <section className="overflow-hidden bg-[var(--bg)] py-24">
       <Container>
-        <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
-          Kaip organizuojami kursai?
-        </h2>
+        <SectionHeading
+          eyebrow="Kursai"
+          title="Kaip organizuojami kursai?"
+          description="Pasirinkite formatą, kuris tinka Jums: vieni, grupėje, nuotoliu ar su konkrečiu tikslu."
+        />
       </Container>
 
       {/* Draggable track — overflows to the right */}
-      <div
-        ref={trackRef}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={stopDrag}
-        onPointerLeave={stopDrag}
-        className={`mt-12 flex gap-6 overflow-x-auto pb-4 pl-6 sm:pl-10 lg:pl-[max(4rem,calc((100vw-1152px)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
-          isDragging ? "cursor-grabbing select-none" : "cursor-grab"
-        }`}
-      >
-        {courses.map((c, i) => (
-          <div
-            key={i}
-            className="group relative aspect-[4/5] w-[300px] shrink-0 overflow-hidden rounded-3xl sm:w-[340px]"
-          >
-            <Image
-              src={c.image}
-              alt=""
-              fill
-              draggable={false}
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6">
-              <h3 className="text-xl font-bold text-white">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--text-body)]">
-                {c.desc}
-              </p>
-            </div>
-          </div>
-        ))}
-        {/* trailing spacer so last card isn't flush to edge */}
-        <div className="w-6 shrink-0 sm:w-10" />
-      </div>
-
-      {/* Button */}
-      <Container className="mt-12">
-        <Link
-          href="#"
-          className="inline-block rounded-[18px] bg-[var(--accent)] px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+      <Reveal>
+        <div
+          ref={trackRef}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={stopDrag}
+          onPointerLeave={stopDrag}
+          className={`mt-12 flex gap-5 overflow-x-auto pt-2 pb-6 pl-6 sm:pl-10 lg:pl-[max(4rem,calc((100vw-1152px)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+            isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+          }`}
         >
-          Plačiau
+          {courses.map((c) => (
+            <article key={c.title} className="glow-card group flex w-[280px] shrink-0 flex-col overflow-hidden sm:w-[320px]">
+              <div className="relative aspect-[4/3] overflow-hidden bg-background">
+                <Image
+                  src={c.image}
+                  alt=""
+                  fill
+                  draggable={false}
+                  sizes="320px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+              </div>
+              <div className="flex flex-1 flex-col gap-2 p-5">
+                <h3 className="text-lg font-medium text-foreground">{c.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+              </div>
+            </article>
+          ))}
+          {/* trailing spacer so last card isn't flush to edge */}
+          <div className="w-1 shrink-0 sm:w-5" />
+        </div>
+      </Reveal>
+
+      <Container className="mt-6">
+        <Link href="/kalbu-kursai" className="btn-primary text-base">
+          Visi kursai
+          <ArrowRight />
         </Link>
       </Container>
     </section>

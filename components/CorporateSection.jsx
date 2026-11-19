@@ -4,6 +4,8 @@ import { useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/Container";
+import { Reveal, ScrambleText } from "@/components/Reveal";
+import { ArrowRight } from "@/components/Icons";
 
 const cards = [
   { title: "Komandų mokymai", desc: "Pritaikyti kursai visai komandai, stiprinantys bendradarbiavimą ir kompetencijas.", image: "/images/corp-1.jpg" },
@@ -31,78 +33,67 @@ export default function CorporateSection() {
 
   return (
     <section className="overflow-hidden bg-[var(--bg)] py-24">
-      {/* Header: smaller left, bigger right */}
-      <Container className="grid items-center gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
-        <div>
-          <h2 className="text-4xl font-extrabold leading-tight text-white sm:text-5xl">
-            Kursai Skirti Įmonėms
-          </h2>
-        </div>
+      {/* Header: title left, quote + link right */}
+      <Container className="grid items-end gap-10 lg:grid-cols-[2fr_3fr] lg:gap-16">
+        <Reveal>
+          <p className="mb-3 text-xs font-semibold tracking-wide text-primary uppercase">
+            <ScrambleText text="Įmonėms" />
+          </p>
+          <h2 className="text-3xl font-semibold tracking-tight text-foreground sm:text-4xl">Kursai skirti įmonėms</h2>
+        </Reveal>
 
-        <div>
-          <blockquote className="border-l-2 border-[var(--accent)] pl-6 text-lg italic leading-relaxed text-[var(--text-body)]">
-            „Lertman siūlo Jūsų įmonės ar organizacijos nariams pritaikytus kalbų
-            mokymo sprendimus, padėsiančius sustiprinti komandos kompetencijas ir
-            praplėsti verslo galimybes.“
+        <Reveal variant="right">
+          <blockquote className="border-l-2 border-primary pl-6 text-lg leading-relaxed text-muted-foreground">
+            „Lertman siūlo Jūsų įmonės ar organizacijos nariams pritaikytus kalbų mokymo sprendimus, padėsiančius
+            sustiprinti komandos kompetencijas ir praplėsti verslo galimybes.“
           </blockquote>
-
-          <Link
-            href="/imonems"
-            className="group mt-6 inline-flex items-center gap-3 font-semibold text-white transition-colors hover:text-[var(--accent)]"
-          >
-            <span className="flex h-10 w-10 items-center justify-center rounded-full border border-[var(--card-border)] transition-colors group-hover:border-[var(--accent)] group-hover:bg-[var(--accent)]">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </span>
-            Plačiau
-          </Link>
-        </div>
+        </Reveal>
       </Container>
 
       {/* Draggable card track — overflows right */}
-      <div
-        ref={trackRef}
-        onPointerDown={onPointerDown}
-        onPointerMove={onPointerMove}
-        onPointerUp={stopDrag}
-        onPointerLeave={stopDrag}
-        className={`mt-16 flex gap-6 overflow-x-auto pb-4 pl-6 sm:pl-10 lg:pl-[max(4rem,calc((100vw-1152px)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
-          isDragging ? "cursor-grabbing select-none" : "cursor-grab"
-        }`}
-      >
-        {cards.map((c, i) => (
-          <div
-            key={i}
-            className="group relative aspect-[4/5] w-[300px] shrink-0 overflow-hidden rounded-3xl sm:w-[340px]"
-          >
-            <Image
-              src={c.image}
-              alt=""
-              fill
-              draggable={false}
-              className="object-cover transition-transform duration-500 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-            <div className="absolute bottom-0 left-0 p-6">
-              <h3 className="text-xl font-bold text-white">{c.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-[var(--text-body)]">
-                {c.desc}
-              </p>
-            </div>
-          </div>
-        ))}
-        <div className="w-6 shrink-0 sm:w-10" />
-      </div>
-
-      {/* Big button */}
-      <Container className="mt-12">
-        <Link
-          href="/imonems"
-          className="inline-block rounded-[18px] bg-[var(--accent)] px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+      <Reveal>
+        <div
+          ref={trackRef}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={stopDrag}
+          onPointerLeave={stopDrag}
+          className={`mt-12 flex gap-5 overflow-x-auto pt-2 pb-6 pl-6 sm:pl-10 lg:pl-[max(4rem,calc((100vw-1152px)/2))] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden ${
+            isDragging ? "cursor-grabbing select-none" : "cursor-grab"
+          }`}
         >
-          Plačiau
+          {cards.map((c, i) => (
+            <article key={c.title} className="glow-card group flex w-[280px] shrink-0 flex-col overflow-hidden sm:w-[320px]">
+              <div className="relative aspect-[4/3] overflow-hidden bg-background">
+                <Image
+                  src={c.image}
+                  alt=""
+                  fill
+                  draggable={false}
+                  sizes="320px"
+                  className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                />
+                <span className="absolute top-3 left-3 rounded-md bg-black/55 px-2 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col gap-2 p-5">
+                <h3 className="text-lg font-medium text-foreground">{c.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{c.desc}</p>
+              </div>
+            </article>
+          ))}
+          <div className="w-1 shrink-0 sm:w-5" />
+        </div>
+      </Reveal>
+
+      <Container className="mt-6 flex flex-wrap gap-3">
+        <Link href="/imonems" className="btn-primary text-base">
+          Pasiūlymas įmonei
+          <ArrowRight />
+        </Link>
+        <Link href="/kontaktai" className="btn-outline text-base">
+          Susisiekti
         </Link>
       </Container>
     </section>

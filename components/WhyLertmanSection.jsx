@@ -47,7 +47,7 @@ export default function WhyLertmanSection() {
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left: text + button */}
         <div>
-          <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+          <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
             Kodėl Lertman?
           </h2>
           <p className="mt-6 leading-relaxed text-[var(--text-body)]">
@@ -58,39 +58,36 @@ export default function WhyLertmanSection() {
           </p>
           <Link
             href="/kalbu-kursai"
-            className="mt-8 inline-block rounded-[18px] bg-[var(--accent)] px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+            className="mt-8 btn-primary text-base"
           >
-            Kalbu Kursai
+            Kalbų kursai
           </Link>
         </div>
 
-        {/* Right: 4 staggered cards */}
+        {/* Right: 4 staggered cards. The offset sits on a wrapper, so the card's hover lift doesn't fight it. */}
         <div className="grid grid-cols-2 gap-6">
           {features.map((f, i) => (
-            <div
-              key={f.title}
-              className={`rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-[0_15px_60px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1 ${
-                i % 2 === 0 ? "lg:-translate-y-6" : "lg:translate-y-6"
-              }`}
-            >
-              <div className="mb-4 inline-flex rounded-xl bg-[var(--accent)]/10 p-3">
-                <svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 32 32"
-                  fill="none"
-                  stroke="var(--accent)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  {f.icon}
-                </svg>
+            <div key={f.title} className={i % 2 === 0 ? "lg:-translate-y-6" : "lg:translate-y-6"}>
+              <div className="glow-card h-full rounded-2xl p-6">
+                <div className="mb-4 inline-flex rounded-xl bg-[var(--accent)]/10 p-3">
+                  <svg
+                    width="28"
+                    height="28"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    stroke="var(--accent)"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    {f.icon}
+                  </svg>
+                </div>
+                <h3 className="mb-2 text-lg font-bold text-foreground">{f.title}</h3>
+                <p className="text-sm leading-relaxed text-[var(--text-body)]">
+                  {f.text}
+                </p>
               </div>
-              <h3 className="mb-2 text-lg font-bold text-white">{f.title}</h3>
-              <p className="text-sm leading-relaxed text-[var(--text-body)]">
-                {f.text}
-              </p>
             </div>
           ))}
         </div>

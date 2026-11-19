@@ -65,7 +65,7 @@ export default function LanguageTabs() {
         {/* Left: sticky nav with scroll indicator */}
         <nav className="lg:w-1/4 lg:min-w-[240px]">
           <div className="lg:sticky lg:top-24">
-            <div className="relative flex flex-col gap-8 border-l border-white/10 pl-6">
+            <div className="relative flex flex-col gap-8 border-l border-border pl-6">
               <span
                 className="absolute -left-px w-0.5 rounded bg-[var(--accent)] transition-all duration-500"
                 style={{
@@ -80,7 +80,7 @@ export default function LanguageTabs() {
                     sectionRefs.current[i]?.scrollIntoView({ behavior: "smooth", block: "center" })
                   }
                   className={`text-left text-xl font-bold transition-opacity duration-200 ${
-                    i === active ? "text-white opacity-100" : "text-white opacity-40 hover:opacity-70"
+                    i === active ? "text-foreground opacity-100" : "text-foreground opacity-60 hover:opacity-90"
                   }`}
                 >
                   {tab.label}
@@ -113,9 +113,9 @@ export default function LanguageTabs() {
                   {tab.languages.map((lang) => (
                     <div
                       key={lang.name}
-                      className="rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-6 shadow-[0_15px_60px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1"
+                      className="glow-card rounded-2xl p-6"
                     >
-                      <h3 className="mb-2 text-lg font-bold text-white">{lang.name}</h3>
+                      <h3 className="mb-2 text-lg font-bold text-foreground">{lang.name}</h3>
                       <p className="text-sm leading-relaxed text-[var(--text-body)]">
                         {lang.desc}
                       </p>

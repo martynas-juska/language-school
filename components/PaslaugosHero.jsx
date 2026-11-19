@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Container from "@/components/Container";
+import { ArrowRight } from "@/components/Icons";
 
 const stats = [
   {
@@ -36,18 +37,20 @@ const stats = [
 
 export default function PaslaugosHero() {
   return (
-    <section className="bg-[var(--bg)] pt-40 pb-24">
+    <section className="relative isolate overflow-hidden bg-[var(--bg)] pt-32 pb-24 lg:pt-40">
+      <div aria-hidden="true" className="hero-backdrop pointer-events-none absolute inset-0 -z-10" />
       <Container className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
         {/* Left: heading + button */}
         <div>
-          <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1 className="rv-load text-5xl font-semibold leading-[1.05] tracking-tight text-foreground sm:text-6xl lg:text-7xl" style={{ fontStretch: "118%" }}>
             Paslaugos
           </h1>
           <Link
             href="#contact"
-            className="mt-10 inline-block rounded-[18px] bg-[var(--accent)] px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+            className="mt-10 btn-primary text-base"
           >
             Susisiekti
+            <ArrowRight />
           </Link>
         </div>
 
@@ -62,7 +65,7 @@ export default function PaslaugosHero() {
           <div className="mt-10 grid grid-cols-3 gap-6">
             {stats.map((s) => (
               <div key={s.label} className="flex flex-col items-center text-center">
-                <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-[var(--accent)]/10">
+                <span className="flex h-14 w-14 items-center justify-center rounded-xl border border-primary/25 bg-primary/10">
                   <svg
                     width="28"
                     height="28"
@@ -76,7 +79,7 @@ export default function PaslaugosHero() {
                     {s.icon}
                   </svg>
                 </span>
-                <span className="mt-4 text-2xl font-extrabold text-white">
+                <span className="mt-4 text-2xl font-semibold text-foreground">
                   {s.value}
                 </span>
                 <span className="mt-1 text-sm text-[var(--text-secondary)]">

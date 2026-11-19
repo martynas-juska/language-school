@@ -1,5 +1,7 @@
 import Link from "next/link";
-import Container from "@/components/Container";
+import SectionHeading from "@/components/SectionHeading";
+import { Reveal } from "@/components/Reveal";
+import { ArrowRight } from "@/components/Icons";
 
 const languages = [
   { name: "Anglų", individual: "22 € / 60 min", group: "9 € / 45 min" },
@@ -18,16 +20,7 @@ const languages = [
 
 function FlagIcon() {
   return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="var(--accent)"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
       <path d="M4 21V4a1 1 0 011-1h13l-2 5 2 5H5" />
     </svg>
   );
@@ -37,46 +30,42 @@ export default function CoursePricing() {
   return (
     <section className="bg-[var(--bg)] py-24">
       <div className="mx-auto max-w-[1500px] px-6 sm:px-10 lg:px-16">
-        <h1 className="text-4xl font-extrabold text-white sm:text-5xl">
-          Kokių kalbų mokome?
-        </h1>
+        <SectionHeading
+          eyebrow="Kainos"
+          title="Kokių kalbų mokome?"
+          description="Individualios pamokos trunka 60 min., grupinės – 45 min."
+        />
 
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <Reveal as="ul" variant="stagger" className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {languages.map((lang) => (
-            <div
-              key={lang.name}
-              className="flex flex-col rounded-3xl border border-[var(--card-border)] bg-[var(--card)] p-7 shadow-[0_15px_60px_rgba(0,0,0,0.35)] transition-transform duration-200 hover:-translate-y-1"
-            >
+            <li key={lang.name} className="glow-card group flex flex-col p-6">
               {/* Icon + name */}
               <div className="flex items-center gap-3">
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-[var(--accent)]/10">
+                <span className="icon-tile">
                   <FlagIcon />
                 </span>
-                <h3 className="text-xl font-bold text-white">{lang.name}</h3>
+                <h3 className="text-lg font-medium text-foreground">{lang.name}</h3>
               </div>
 
               {/* Prices */}
-              <div className="mt-6 space-y-2 text-sm">
-                <p className="flex justify-between text-[var(--text-body)]">
-                  <span className="text-[var(--text-secondary)]">Individualios:</span>
-                  <span className="font-semibold text-white">{lang.individual}</span>
-                </p>
-                <p className="flex justify-between text-[var(--text-body)]">
-                  <span className="text-[var(--text-secondary)]">Grupėje:</span>
-                  <span className="font-semibold text-white">{lang.group}</span>
-                </p>
-              </div>
+              <dl className="mt-5 divide-y divide-border/70 border-y border-border/70 text-sm">
+                <div className="flex items-center justify-between py-2.5">
+                  <dt className="text-muted-foreground">Individualios</dt>
+                  <dd className="font-medium text-foreground">{lang.individual}</dd>
+                </div>
+                <div className="flex items-center justify-between py-2.5">
+                  <dt className="text-muted-foreground">Grupėje</dt>
+                  <dd className="font-medium text-foreground">{lang.group}</dd>
+                </div>
+              </dl>
 
-              {/* Button */}
-              <Link
-                href="/kalbu-kursai"
-                className="mt-6 rounded-[14px] bg-[var(--accent)] py-3 text-center font-semibold text-white transition-all duration-200 hover:bg-[var(--accent-hover)]"
-              >
+              <Link href="/kontaktai" className="btn-primary btn-sm mt-5 w-full">
                 Registruotis
+                <ArrowRight />
               </Link>
-            </div>
+            </li>
           ))}
-        </div>
+        </Reveal>
       </div>
     </section>
   );

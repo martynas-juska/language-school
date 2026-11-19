@@ -29,7 +29,7 @@ export default function OtherServicesSection() {
           <div className="relative grid items-center gap-10 p-10 sm:p-14 lg:grid-cols-2 lg:p-20">
             {/* Left: text + button */}
             <div>
-              <h2 className="text-4xl font-extrabold text-white sm:text-5xl">
+              <h2 className="text-4xl font-extrabold text-foreground sm:text-5xl">
                 Kitos Paslaugos
               </h2>
               <p className="mt-6 max-w-xl leading-relaxed text-[var(--text-body)]">
@@ -42,7 +42,7 @@ export default function OtherServicesSection() {
               </p>
               <Link
                 href="/paslaugos"
-                className="mt-8 inline-block rounded-[18px] bg-[var(--accent)] px-10 py-4 text-lg font-semibold text-white transition-all duration-200 hover:-translate-y-[3px] hover:bg-[var(--accent-hover)] hover:shadow-[0_12px_35px_var(--hero-glow)]"
+                className="mt-8 btn-primary text-base"
               >
                 Plačiau
               </Link>
@@ -53,7 +53,7 @@ export default function OtherServicesSection() {
               {chips.map((chip) => (
                 <div
                   key={chip.label}
-                  className="absolute rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-white shadow-[0_15px_40px_rgba(0,0,0,0.35)] backdrop-blur-md"
+                  className="absolute rounded-2xl border border-white/15 bg-white/5 px-5 py-3 text-sm font-semibold text-foreground shadow-[0_15px_40px_rgba(0,0,0,0.35)] backdrop-blur-md"
                   style={{ top: chip.top, left: chip.left }}
                 >
                   {chip.label}
